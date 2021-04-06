@@ -1,0 +1,24 @@
+{
+	"name": "Every Hour",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Bottle Batch Rejects",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2021-03-25T12:31:00",
+				"timeZone": "New Zealand Standard Time"
+			}
+		}
+	}
+}

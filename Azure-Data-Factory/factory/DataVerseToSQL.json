@@ -1,0 +1,9 @@
+{
+	"name": "DataVerseToSQL",
+	"location": "australiasoutheast",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5462b920-8d16-4298-8d48-3f9256f6439a",
+		"tenantId": "cbc71033-d11b-4a2f-a44a-c0f713502267"
+	}
+}

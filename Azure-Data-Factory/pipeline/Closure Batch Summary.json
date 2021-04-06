@@ -1,0 +1,269 @@
+{
+	"name": "Closure Batch Summary",
+	"properties": {
+		"activities": [
+			{
+				"name": "Closure Batch Summary",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "CommonDataServiceForAppsSink",
+						"writeBatchSize": 10,
+						"writeBehavior": "upsert"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Box Number",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ww_closurebatchboxnumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Closure Batch Code",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "ww_closurebatchcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Closure Batch Summary",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "ww_closurebatchsummaryid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "Closure Batch Summary Name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "ww_closurebatchsummaryname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Closure ILS",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "ww_closureils",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Comments",
+									"type": "String",
+									"physicalType": "text"
+								},
+								"sink": {
+									"name": "ww_closurebatchsummarycomments",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cork Expiry Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "ww_closurebatchcorkexpirydate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Cork Moisture",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 0,
+									"precision": 18
+								},
+								"sink": {
+									"name": "ww_closurebatchcorkmoisture",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "Created On",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "createdon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Import Sequence Number",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Modified On",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "OperatorCode",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "ww_closurebatchoperatorcode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Production Date",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "ww_closurebatchproductiondate",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Record Created On",
+									"type": "DateTime",
+									"physicalType": "date"
+								},
+								"sink": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Reference Number",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "ww_closurebatchreferencenumber",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Run",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "ww_run",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "Sequence Number",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "ww_closurebatchsequencenumber",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Supplier",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "ww_closurebatchsummarysupplier",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "Supplier Code",
+									"type": "String",
+									"physicalType": "nchar"
+								},
+								"sink": {
+									"name": "ww_closurebatchsuppliercode",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "WWSQL003_ClosureBatchSummary",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ClosureBatchSummary",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-03-24T02:34:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

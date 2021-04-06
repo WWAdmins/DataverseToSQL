@@ -1,0 +1,16 @@
+{
+	"name": "BottleBatchRejects",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataVerse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "ww_bottlebatchrejects"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
