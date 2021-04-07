@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "CommonDataServiceForAppsSource",
-						"query": "<fetch mapping='logical'>\n  <entity name='ww_bottlebatchrejects'>\n     <attribute name='ww_billofmaterials' />\n     <attribute name='ww_bottlebatchrejectsid' />\n     <attribute name='ww_broken' />\n     <attribute name='ww_comments' />\n     <attribute name='createdon' />\n     <attribute name='ww_filler' />\n     <attribute name='importsequencenumber' />\n     <attribute name='ww_lab' />\n     <attribute name='modifiedon' />\n     <attribute name='ww_name' />\n     <attribute name='ww_operatorcode' />\n     <attribute name='overriddencreatedon' />  \n\t<filter type='and'>\n        <condition attribute='createdon' operator='olderthan-x-days' value='1' />\n    </filter>\t ​\n ​</entity>\n</fetch>"
+						"query": "<fetch mapping='logical'>\n  <entity name='ww_bottlebatchrejects'>\n     <attribute name='ww_billofmaterials' />\n     <attribute name='ww_bottlebatchrejectsid' />\n     <attribute name='ww_broken' />\n     <attribute name='ww_comments' />\n     <attribute name='createdon' />\n     <attribute name='ww_filler' />\n     <attribute name='importsequencenumber' />\n     <attribute name='ww_lab' />\n     <attribute name='modifiedon' />\n     <attribute name='ww_name' />\n     <attribute name='ww_operatorcode' />\n     <attribute name='overriddencreatedon' />  \t ​\n ​</entity>\n</fetch>"
 					},
 					"sink": {
 						"type": "SqlServerSink"
@@ -141,6 +141,33 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Merge Statement",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Bottle Batch Rejects",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_Bottle Batch Rejects]"
+				},
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": [],
