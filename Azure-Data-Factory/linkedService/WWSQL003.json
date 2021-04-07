@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "SqlServer",
 		"typeProperties": {
-			"connectionString": "integrated security=True;data source=WWSQL003;initial catalog=DataVerse",
+			"connectionString": "integrated security=True;data source=WWSQL003;initial catalog=DataVerse_Staging",
 			"userName": "Tejaswi.Datla@wineworks.co.nz",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2NTczNWJkZS0xMzc5LTQ4NDItYmMxYS02YTM2ODQ5ZjNhZmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhMmZkZDMzYS0wMjNkLTQ0NGYtOThjZS1iNDQwMzZlYjU2ODYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
