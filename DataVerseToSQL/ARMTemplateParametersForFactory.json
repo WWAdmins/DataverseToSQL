@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DataVerseToSQL"
+		},
+		"DataVerse_password": {
+			"value": ""
+		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"WWSQL003_connectionString": {
+			"value": ""
+		},
+		"WWSQL003_password": {
+			"value": ""
+		},
+		"DataVerse_properties_typeProperties_username": {
+			"value": "tejaswi.Datla@wineworks.co.nz"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "C:\\Users\\tejaswi.datla\\Desktop\\TopMovies_Part1"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "tejaswi.Datla@wineworks.co.nz"
+		},
+		"WWSQL003_properties_typeProperties_userName": {
+			"value": "Tejaswi.Datla@wineworks.co.nz"
+		}
+	}
+}
