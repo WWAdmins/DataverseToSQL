@@ -27,8 +27,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ww_amount",
-									"type": "Int32"
+									"name": "createdby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Amount",
@@ -37,8 +37,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_billofmaterials",
-									"type": "Guid"
+									"name": "createdbyname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Bill of Materials",
@@ -47,7 +47,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottlebatch",
+									"name": "createdbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -57,8 +57,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottlebatchsummaryid",
-									"type": "Guid"
+									"name": "createdon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Bottle Batch Summary",
@@ -67,8 +67,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottlebatchsummaryname",
-									"type": "String"
+									"name": "createdonbehalfby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Bottle Batch Summary Name",
@@ -77,8 +77,8 @@
 							},
 							{
 								"source": {
-									"name": "createdon",
-									"type": "DateTime"
+									"name": "createdonbehalfbyname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Created On",
@@ -87,8 +87,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_deleteline",
-									"type": "Boolean"
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
 								},
 								"sink": {
 									"name": "DeletedLine",
@@ -107,8 +107,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedon",
-									"type": "DateTime"
+									"name": "modifiedby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Modified On",
@@ -117,17 +117,17 @@
 							},
 							{
 								"source": {
-									"name": "ww_operatorcode",
-									"type": "Int32"
+									"name": "modifiedbyname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Operator Code",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ww_palletid",
+									"name": "modifiedbyyominame",
 									"type": "String"
 								},
 								"sink": {
@@ -137,7 +137,7 @@
 							},
 							{
 								"source": {
-									"name": "overriddencreatedon",
+									"name": "modifiedon",
 									"type": "DateTime"
 								},
 								"sink": {
@@ -147,8 +147,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_stockcode",
-									"type": "String"
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Stock code",
