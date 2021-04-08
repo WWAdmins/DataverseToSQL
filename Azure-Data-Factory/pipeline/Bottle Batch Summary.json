@@ -97,7 +97,7 @@
 							},
 							{
 								"source": {
-									"name": "importsequencenumber",
+									"name": "ww_importsequencenumber",
 									"type": "Int32"
 								},
 								"sink": {
@@ -172,7 +172,7 @@
 				]
 			},
 			{
-				"name": "Merge Statement",
+				"name": "Stored procedure1",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
