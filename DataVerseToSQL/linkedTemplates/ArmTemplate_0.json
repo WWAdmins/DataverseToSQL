@@ -607,7 +607,17 @@
 									},
 									{
 										"source": {
-											"name": "ww_importsequencenumber",
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "DeletedLine",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
 											"type": "Int32"
 										},
 										"sink": {
@@ -628,11 +638,11 @@
 									{
 										"source": {
 											"name": "ww_operatorcode",
-											"type": "String"
+											"type": "Int32"
 										},
 										"sink": {
 											"name": "Operator Code",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -664,16 +674,6 @@
 											"name": "Stock code",
 											"type": "String"
 										}
-									},
-									{
-										"source": {
-											"name": "ww_incorrect",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "DeletedLine",
-											"type": "Boolean"
-										}
 									}
 								]
 							}
@@ -692,6 +692,33 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Bottle Batch Summary",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Bottle Batch Summary]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"annotations": [],
@@ -699,7 +726,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/BottleBatchSummary')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchSummary')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchSummary')]",
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
 			]
 		},
 		{
