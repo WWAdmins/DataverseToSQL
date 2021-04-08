@@ -122,7 +122,7 @@
 								},
 								"sink": {
 									"name": "Operator Code",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
@@ -172,7 +172,7 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Merge Statement",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
