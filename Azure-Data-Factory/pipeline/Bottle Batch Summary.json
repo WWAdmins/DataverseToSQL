@@ -87,7 +87,17 @@
 							},
 							{
 								"source": {
-									"name": "ww_importsequencenumber",
+									"name": "ww_deleteline",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "DeletedLine",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
 									"type": "Int32"
 								},
 								"sink": {
@@ -108,7 +118,7 @@
 							{
 								"source": {
 									"name": "ww_operatorcode",
-									"type": "String"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Operator Code",
@@ -143,16 +153,6 @@
 								"sink": {
 									"name": "Stock code",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_incorrect",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "DeletedLine",
-									"type": "Boolean"
 								}
 							}
 						]
