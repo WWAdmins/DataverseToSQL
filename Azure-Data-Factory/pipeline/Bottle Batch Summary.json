@@ -172,7 +172,7 @@
 				]
 			},
 			{
-				"name": "Stored procedure1",
+				"name": "Merge Statement",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
