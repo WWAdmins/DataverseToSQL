@@ -87,17 +87,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_deleteline",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "DeletedLine",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
-									"name": "importsequencenumber",
+									"name": "ww_importsequencenumber",
 									"type": "Int32"
 								},
 								"sink": {
@@ -118,7 +108,7 @@
 							{
 								"source": {
 									"name": "ww_operatorcode",
-									"type": "Int32"
+									"type": "String"
 								},
 								"sink": {
 									"name": "Operator Code",
@@ -154,6 +144,16 @@
 									"name": "Stock code",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "ww_incorrect",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "DeletedLine",
+									"type": "Boolean"
+								}
 							}
 						]
 					}
@@ -172,7 +172,7 @@
 				]
 			},
 			{
-				"name": "Merge Statement",
+				"name": "Stored procedure1",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
@@ -189,14 +189,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Bottle Batch Summary]"
-				},
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				}
+				"userProperties": []
 			}
 		],
 		"annotations": [],
