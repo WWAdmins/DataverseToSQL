@@ -16,14 +16,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "CommonDataServiceForAppsSource"
 					},
 					"sink": {
-						"type": "CommonDataServiceForAppsSink",
-						"writeBatchSize": 10,
-						"writeBehavior": "upsert"
+						"type": "SqlServerSink",
+						"sqlWriterStoredProcedureName": "[dbo].[sp_Closure Batch Summary]"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -32,8 +29,7 @@
 							{
 								"source": {
 									"name": "Box Number",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "ww_closurebatchboxnumber",
@@ -43,8 +39,7 @@
 							{
 								"source": {
 									"name": "Closure Batch Code",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchcode",
@@ -54,8 +49,7 @@
 							{
 								"source": {
 									"name": "Closure Batch Summary",
-									"type": "Guid",
-									"physicalType": "uniqueidentifier"
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "ww_closurebatchsummaryid",
@@ -65,8 +59,7 @@
 							{
 								"source": {
 									"name": "Closure Batch Summary Name",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchsummaryname",
@@ -76,8 +69,7 @@
 							{
 								"source": {
 									"name": "Closure ILS",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closureils",
@@ -87,8 +79,7 @@
 							{
 								"source": {
 									"name": "Comments",
-									"type": "String",
-									"physicalType": "text"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchsummarycomments",
@@ -98,8 +89,7 @@
 							{
 								"source": {
 									"name": "Cork Expiry Date",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "ww_closurebatchcorkexpirydate",
@@ -109,10 +99,7 @@
 							{
 								"source": {
 									"name": "Cork Moisture",
-									"type": "Decimal",
-									"physicalType": "decimal",
-									"scale": 0,
-									"precision": 18
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "ww_closurebatchcorkmoisture",
@@ -122,8 +109,7 @@
 							{
 								"source": {
 									"name": "Created On",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "createdon",
@@ -133,8 +119,7 @@
 							{
 								"source": {
 									"name": "Import Sequence Number",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "importsequencenumber",
@@ -144,8 +129,7 @@
 							{
 								"source": {
 									"name": "Modified On",
-									"type": "DateTime",
-									"physicalType": "datetime"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "modifiedon",
@@ -155,8 +139,7 @@
 							{
 								"source": {
 									"name": "OperatorCode",
-									"type": "String",
-									"physicalType": "nvarchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchoperatorcode",
@@ -166,8 +149,7 @@
 							{
 								"source": {
 									"name": "Production Date",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "ww_closurebatchproductiondate",
@@ -177,8 +159,7 @@
 							{
 								"source": {
 									"name": "Record Created On",
-									"type": "DateTime",
-									"physicalType": "date"
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "overriddencreatedon",
@@ -188,8 +169,7 @@
 							{
 								"source": {
 									"name": "Reference Number",
-									"type": "String",
-									"physicalType": "nchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchreferencenumber",
@@ -199,8 +179,7 @@
 							{
 								"source": {
 									"name": "Run",
-									"type": "Guid",
-									"physicalType": "uniqueidentifier"
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "ww_run",
@@ -210,8 +189,7 @@
 							{
 								"source": {
 									"name": "Sequence Number",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "ww_closurebatchsequencenumber",
@@ -221,8 +199,7 @@
 							{
 								"source": {
 									"name": "Supplier",
-									"type": "Guid",
-									"physicalType": "uniqueidentifier"
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "ww_closurebatchsummarysupplier",
@@ -232,34 +209,55 @@
 							{
 								"source": {
 									"name": "Supplier Code",
-									"type": "String",
-									"physicalType": "nchar"
+									"type": "String"
 								},
 								"sink": {
 									"name": "ww_closurebatchsuppliercode",
 									"type": "String"
 								}
 							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						]
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "WWSQL003_ClosureBatchSummary",
+						"referenceName": "ClosureBatchSummary",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ClosureBatchSummary",
+						"referenceName": "WWSQL003_ClosureBatchSummary",
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Merge Statement",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Closure Batch Summary",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_Bottle Batch Summary]"
+				},
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": [],
