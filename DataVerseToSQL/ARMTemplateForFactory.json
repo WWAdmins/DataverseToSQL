@@ -463,14 +463,10 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "SqlServerSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
+								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "CommonDataServiceForAppsSink",
-								"writeBatchSize": 10,
-								"writeBehavior": "upsert"
+								"type": "SqlServerSink"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -478,245 +474,237 @@
 								"mappings": [
 									{
 										"source": {
-											"name": "Box Number",
-											"type": "Int32",
-											"physicalType": "int"
+											"name": "ww_closurebatchboxnumber",
+											"type": "Int32"
 										},
 										"sink": {
-											"name": "ww_closurebatchboxnumber",
+											"name": "Box Number",
 											"type": "Int32"
 										}
 									},
 									{
 										"source": {
-											"name": "Closure Batch Code",
-											"type": "String",
-											"physicalType": "nvarchar"
+											"name": "ww_closurebatchcode",
+											"type": "String"
 										},
 										"sink": {
-											"name": "ww_closurebatchcode",
+											"name": "Closure Batch Code",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "Closure Batch Summary",
-											"type": "Guid",
-											"physicalType": "uniqueidentifier"
+											"name": "ww_closurebatchsummaryid",
+											"type": "Guid"
 										},
 										"sink": {
-											"name": "ww_closurebatchsummaryid",
+											"name": "Closure Batch Summary",
 											"type": "Guid"
 										}
 									},
 									{
 										"source": {
-											"name": "Closure Batch Summary Name",
-											"type": "String",
-											"physicalType": "nvarchar"
-										},
-										"sink": {
 											"name": "ww_closurebatchsummaryname",
 											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Summary Name",
+											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "Closure ILS",
-											"type": "String",
-											"physicalType": "nvarchar"
-										},
-										"sink": {
 											"name": "ww_closureils",
 											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Comments",
-											"type": "String",
-											"physicalType": "text"
 										},
 										"sink": {
-											"name": "ww_closurebatchsummarycomments",
+											"name": "Closure ILS",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "Cork Expiry Date",
-											"type": "DateTime",
-											"physicalType": "date"
+											"name": "ww_closurebatchsummarycomments",
+											"type": "String"
 										},
 										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_closurebatchcorkexpirydate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Cork Expiry Date",
 											"type": "DateTime"
 										}
 									},
 									{
 										"source": {
-											"name": "Cork Moisture",
-											"type": "Decimal",
-											"physicalType": "decimal",
-											"scale": 0,
-											"precision": 18
+											"name": "ww_closurebatchcorkmoisture",
+											"type": "Decimal"
 										},
 										"sink": {
-											"name": "ww_closurebatchcorkmoisture",
+											"name": "Cork Moisture",
 											"type": "Decimal"
 										}
 									},
 									{
 										"source": {
-											"name": "Created On",
-											"type": "DateTime",
-											"physicalType": "datetime"
-										},
-										"sink": {
 											"name": "createdon",
 											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
 										}
 									},
 									{
 										"source": {
-											"name": "Import Sequence Number",
-											"type": "Int32",
-											"physicalType": "int"
-										},
-										"sink": {
 											"name": "importsequencenumber",
 											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "Modified On",
-											"type": "DateTime",
-											"physicalType": "datetime"
 										},
 										"sink": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "OperatorCode",
-											"type": "String",
-											"physicalType": "nvarchar"
-										},
-										"sink": {
-											"name": "ww_closurebatchoperatorcode",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Production Date",
-											"type": "DateTime",
-											"physicalType": "date"
-										},
-										"sink": {
-											"name": "ww_closurebatchproductiondate",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "Record Created On",
-											"type": "DateTime",
-											"physicalType": "date"
-										},
-										"sink": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "Reference Number",
-											"type": "String",
-											"physicalType": "nchar"
-										},
-										"sink": {
-											"name": "ww_closurebatchreferencenumber",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Run",
-											"type": "Guid",
-											"physicalType": "uniqueidentifier"
-										},
-										"sink": {
-											"name": "ww_run",
-											"type": "Guid"
-										}
-									},
-									{
-										"source": {
-											"name": "Sequence Number",
-											"type": "Int32",
-											"physicalType": "int"
-										},
-										"sink": {
-											"name": "ww_closurebatchsequencenumber",
+											"name": "Import Sequence Number",
 											"type": "Int32"
 										}
 									},
 									{
 										"source": {
-											"name": "Supplier",
-											"type": "Guid",
-											"physicalType": "uniqueidentifier"
+											"name": "modifiedon",
+											"type": "DateTime"
 										},
 										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "OperatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchproductiondate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Production Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchreferencenumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Reference Number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_closurebatchsummarysupplier",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supplier",
 											"type": "Guid"
 										}
 									},
 									{
 										"source": {
-											"name": "Supplier Code",
-											"type": "String",
-											"physicalType": "nchar"
+											"name": "ww_closurebatchsuppliercode",
+											"type": "String"
 										},
 										"sink": {
-											"name": "ww_closurebatchsuppliercode",
+											"name": "Supplier Code",
 											"type": "String"
 										}
 									}
-								],
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
+								]
 							}
 						},
 						"inputs": [
 							{
-								"referenceName": "WWSQL003_ClosureBatchSummary",
+								"referenceName": "ClosureBatchSummary",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "ClosureBatchSummary",
+								"referenceName": "WWSQL003_ClosureBatchSummary",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Closure Batch Summary",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Closure Batch Summary]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"annotations": [],
 				"lastPublishTime": "2021-03-24T02:34:10Z"
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ClosureBatchSummary')]",
 				"[concat(variables('factoryId'), '/datasets/WWSQL003_ClosureBatchSummary')]",
-				"[concat(variables('factoryId'), '/datasets/ClosureBatchSummary')]"
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
 			]
 		},
 		{
