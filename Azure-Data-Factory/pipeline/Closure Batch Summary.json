@@ -19,8 +19,7 @@
 						"type": "CommonDataServiceForAppsSource"
 					},
 					"sink": {
-						"type": "SqlServerSink",
-						"sqlWriterStoredProcedureName": "[dbo].[sp_Closure Batch Summary]"
+						"type": "SqlServerSink"
 					},
 					"enableStaging": false,
 					"translator": {
@@ -252,7 +251,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Bottle Batch Summary]"
+					"storedProcedureName": "[dbo].[sp_Closure Batch Summary]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
