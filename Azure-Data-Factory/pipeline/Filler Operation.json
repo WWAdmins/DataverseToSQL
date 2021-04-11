@@ -1,0 +1,147 @@
+{
+	"name": "Filler Operation",
+	"properties": {
+		"activities": [
+			{
+				"name": "Filler Operator",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "CommonDataServiceForAppsSource"
+					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ww_billofmaterials",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Bill Of materials",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bottlebatchrejectsid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Bottle Batch Rejects",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_broken",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Broken",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_comments",
+									"type": "String"
+								},
+								"sink": {
+									"name": "comments",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Created On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_filler",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Filler",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_lab",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Lab",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Modified On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_operatorcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Operator Code",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "FillerOperation",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WWSQL003_BottleBatchRejects",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
