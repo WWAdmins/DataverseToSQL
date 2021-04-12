@@ -42,7 +42,7 @@
 								},
 								"sink": {
 									"name": "Status",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -52,7 +52,7 @@
 								},
 								"sink": {
 									"name": "3rd Label",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -72,7 +72,7 @@
 								},
 								"sink": {
 									"name": "4th Label",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -102,7 +102,7 @@
 								},
 								"sink": {
 									"name": "Back Label lean less than 1mm L to R",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -122,7 +122,7 @@
 								},
 								"sink": {
 									"name": "Back label lot code / inkjet code sample taken",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -132,7 +132,7 @@
 								},
 								"sink": {
 									"name": "Back label lot code / inkjet Hourly code check",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -152,7 +152,7 @@
 								},
 								"sink": {
 									"name": "Carton closure less than 10mm",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -162,7 +162,7 @@
 								},
 								"sink": {
 									"name": "Carton fibre tear",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -172,7 +172,7 @@
 								},
 								"sink": {
 									"name": "Carton Inkjet Correct Code",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -202,7 +202,7 @@
 								},
 								"sink": {
 									"name": "Carton skew less than 10mm",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -252,7 +252,7 @@
 								},
 								"sink": {
 									"name": "Edge adhesion test",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -267,12 +267,12 @@
 							},
 							{
 								"source": {
-									"name": "ww_labelleanlessthan1mmltor",
+									"name": "ww_backlabelleanlessthan1mmltor",
 									"type": "Int32"
 								},
 								"sink": {
 									"name": "Front Label lean less than 1mm L to R",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -312,7 +312,7 @@
 								},
 								"sink": {
 									"name": "Side Gap less that 4mm",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -322,7 +322,7 @@
 								},
 								"sink": {
 									"name": "Slipsheets Correct Placement",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -373,16 +373,6 @@
 								"sink": {
 									"name": "Record Created On",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "statuscode",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Status Reason",
-									"type": "String"
 								}
 							},
 							{
