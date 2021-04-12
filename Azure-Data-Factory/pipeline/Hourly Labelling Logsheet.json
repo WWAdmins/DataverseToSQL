@@ -267,7 +267,7 @@
 							},
 							{
 								"source": {
-									"name": "statuscode",
+									"name": "ww_labelleanlessthan1mmltor",
 									"type": "Int32"
 								},
 								"sink": {
@@ -277,8 +277,8 @@
 							},
 							{
 								"source": {
-									"name": "timezoneruleversionnumber",
-									"type": "Int32"
+									"name": "ww_labeldamageruborpick",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Label Damage, Rub or Pick",
@@ -287,8 +287,8 @@
 							},
 							{
 								"source": {
-									"name": "utcconversiontimezonecode",
-									"type": "Int32"
+									"name": "ww_labelssig",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Labels Sig",
@@ -297,8 +297,8 @@
 							},
 							{
 								"source": {
-									"name": "versionnumber",
-									"type": "Int64"
+									"name": "ww_lasercodeclearandlegiblesig",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Laser Code Clear and Legible",
@@ -307,8 +307,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_backlabelheight",
-									"type": "String"
+									"name": "ww_sidegaplessthat4mm",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Side Gap less that 4mm",
@@ -317,7 +317,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_backlabelleanlessthan1mmltor",
+									"name": "ww_slipsheetscorrectplacement",
 									"type": "Int32"
 								},
 								"sink": {
@@ -327,7 +327,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_backlabellotcodeinkjet",
+									"name": "ww_wrinklesflutesbubblesorcreases",
 									"type": "String"
 								},
 								"sink": {
@@ -337,8 +337,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_backlabellotcodeinkjetcodesampletaken",
-									"type": "Int32"
+									"name": "createdon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Created On",
@@ -347,7 +347,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_backlabellotcodeinkjethourlycodecheck",
+									"name": "importsequencenumber",
 									"type": "Int32"
 								},
 								"sink": {
@@ -357,8 +357,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_billofmaterials",
-									"type": "Guid"
+									"name": "modifiedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Modified On",
@@ -367,8 +367,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_billofmaterialsname",
-									"type": "String"
+									"name": "overriddencreatedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Record Created On",
@@ -377,8 +377,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottleandcapscleansig",
-									"type": "String"
+									"name": "statuscode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Status Reason",
@@ -387,8 +387,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_cartonclosurelessthan10mm",
-									"type": "Int32"
+									"name": "ww_hourlylabellinglogsheetid",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Hourly Labelling Logsheet",
@@ -397,8 +397,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_cartonfibretear",
-									"type": "Int32"
+									"name": "ww_billofmaterials",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Bill of Materials",
