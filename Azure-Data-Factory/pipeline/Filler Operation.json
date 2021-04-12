@@ -457,7 +457,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_eorrinsergaswatersupplyline2",
+									"name": "ww_eorrinsergaswatersupplyline1",
 									"type": "Decimal"
 								},
 								"sink": {
