@@ -167,8 +167,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_closurehopperempty",
-									"type": "Int32"
+									"name": "ww_closurehopperemptysig",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Closure Hopper Empty Sig",
