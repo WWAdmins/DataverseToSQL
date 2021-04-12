@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statuscode",
+									"name": "statecode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -52,7 +52,7 @@
 								},
 								"sink": {
 									"name": "Air Ram Screw Capper",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -72,7 +72,7 @@
 								},
 								"sink": {
 									"name": "Alcohol Sterilisation",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -162,13 +162,13 @@
 								},
 								"sink": {
 									"name": "Closure Hopper Empty",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ww_closurehopperemptysig",
-									"type": "String"
+									"name": "ww_closurehopperempty",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Closure Hopper Empty Sig",
@@ -182,7 +182,7 @@
 								},
 								"sink": {
 									"name": "Closure Type",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -212,7 +212,7 @@
 								},
 								"sink": {
 									"name": "Colour",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -242,7 +242,7 @@
 								},
 								"sink": {
 									"name": "Cork Grade/Size",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -352,7 +352,7 @@
 								},
 								"sink": {
 									"name": "Docket & Vessel",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -381,8 +381,8 @@
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "EOR Bottle Number",
-									"type": "String"
+									"name": "EOR Bottle Count",
+									"type": "Int32"
 								}
 							},
 							{
@@ -457,7 +457,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_eorrinsergaswatersupplyline1",
+									"name": "ww_eorrinsergaswatersupplyline2",
 									"type": "Decimal"
 								},
 								"sink": {
@@ -582,7 +582,7 @@
 								},
 								"sink": {
 									"name": "Glass Frag",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -607,7 +607,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_ccilscode",
+									"name": "ww_ccilscodesig",
 									"type": "String"
 								},
 								"sink": {
@@ -617,7 +617,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_ccilscodesig",
+									"name": "ww_ccilscode",
 									"type": "String"
 								},
 								"sink": {
@@ -707,6 +707,16 @@
 							},
 							{
 								"source": {
+									"name": "crc5d_numberontagsfilters",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Number on tag(s) Filters",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "ww_numberontagssig",
 									"type": "String"
 								},
@@ -732,7 +742,7 @@
 								},
 								"sink": {
 									"name": "Plain / Printed",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -782,7 +792,7 @@
 								},
 								"sink": {
 									"name": "Rinser Medium",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -812,7 +822,7 @@
 								},
 								"sink": {
 									"name": "Sample Attached to Spec Sheet",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
