@@ -381,16 +381,6 @@
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "EOR Bottle Count",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_eorbottlecount",
-									"type": "Int32"
-								},
-								"sink": {
 									"name": "EOR Bottle Number",
 									"type": "String"
 								}
