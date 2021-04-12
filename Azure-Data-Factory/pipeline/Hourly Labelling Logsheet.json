@@ -414,7 +414,14 @@
 			{
 				"name": "Merge Statement",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Hourly Labelling Logsheet",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -424,7 +431,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Filler Operation]"
+					"storedProcedureName": "[dbo].[sp_Hourly Labelling Logsheet]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
