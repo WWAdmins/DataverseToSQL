@@ -16,8 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "CommonDataServiceForAppsSource",
-						"query": "<fetch mapping='logical'>\n  <entity name='ww_bottlebatchrejects'>\n     <attribute name='ww_billofmaterials' />\n     <attribute name='ww_bottlebatchrejectsid' />\n     <attribute name='ww_broken' />\n     <attribute name='ww_comments' />\n     <attribute name='createdon' />\n     <attribute name='ww_filler' />\n     <attribute name='importsequencenumber' />\n     <attribute name='ww_lab' />\n     <attribute name='modifiedon' />\n     <attribute name='ww_name' />\n     <attribute name='ww_operatorcode' />\n     <attribute name='overriddencreatedon' />  \t ​\n ​</entity>\n</fetch>"
+						"type": "CommonDataServiceForAppsSource"
 					},
 					"sink": {
 						"type": "SqlServerSink"
@@ -28,48 +27,318 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ww_billofmaterials",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "Bill Of materials",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_bottlebatchrejectsid",
-									"type": "Guid"
-								},
-								"sink": {
-									"name": "Bottle Batch Rejects",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_broken",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Broken",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_comments",
+									"name": "ww_key",
 									"type": "String"
 								},
 								"sink": {
-									"name": "comments",
+									"name": "Key",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "createdon",
-									"type": "DateTime"
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_rdlabel",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "3rd Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_thirdlabelheightposition",
+									"type": "String"
+								},
+								"sink": {
+									"name": "3rd label height/position",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_thlabel",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "4th Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_fourthlabelheightposition",
+									"type": "String"
+								},
+								"sink": {
+									"name": "4th label height/position",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabelheight",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Back Label Height",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabelleanlessthan1mmltor",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Back Label lean less than 1mm L to R",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabellotcodeinkjet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Back label lot code / inkjet code required",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabellotcodeinkjetcodesampletaken",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Back label lot code / inkjet code sample taken",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabellotcodeinkjethourlycodecheck",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Back label lot code / inkjet Hourly code check",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bottleandcapscleansig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bottle and Caps Clean",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonclosurelessthan10mm",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Carton closure less than 10mm",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonfibretear",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Carton fibre tear",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartoninkjetcorrectcode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Carton Inkjet Correct Code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonlabel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Carton Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonlabelsig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Carton Label Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonskewlessthan10mm",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Carton skew less than 10mm",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonssig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Cartons Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_closuresacceptablefinishsig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Closures Acceptable Finish Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_deleteline",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Delete Line",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_dividersils",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Dividers ILS",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_edgeadhesiontestpass",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Edge adhesion test",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_labelfrontheight",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Front Label Height",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "statuscode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Front Label lean less than 1mm L to R",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "timezoneruleversionnumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Label Damage, Rub or Pick",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utcconversiontimezonecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Labels Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "versionnumber",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "Laser Code Clear and Legible",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabelheight",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Side Gap less that 4mm",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabelleanlessthan1mmltor",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Slipsheets Correct Placement",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabellotcodeinkjet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Wrinkles / Flutes, Bubbles or creases",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_backlabellotcodeinkjetcodesampletaken",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Created On",
@@ -78,28 +347,18 @@
 							},
 							{
 								"source": {
-									"name": "ww_filler",
+									"name": "ww_backlabellotcodeinkjethourlycodecheck",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "Filler",
+									"name": "Import Sequence Number",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "ww_lab",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Lab",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedon",
-									"type": "DateTime"
+									"name": "ww_billofmaterials",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Modified On",
@@ -108,22 +367,42 @@
 							},
 							{
 								"source": {
-									"name": "ww_name",
+									"name": "ww_billofmaterialsname",
 									"type": "String"
 								},
 								"sink": {
-									"name": "Name",
+									"name": "Record Created On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bottleandcapscleansig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Status Reason",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "ww_operatorcode",
+									"name": "ww_cartonclosurelessthan10mm",
 									"type": "Int32"
 								},
 								"sink": {
-									"name": "Operator Code",
-									"type": "String"
+									"name": "Hourly Labelling Logsheet",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_cartonfibretear",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Bill of Materials",
+									"type": "Guid"
 								}
 							}
 						]
@@ -131,13 +410,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "BottleBatchRejects",
+						"referenceName": "HourlyLabellingLogsheet",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "WWSQL003_BottleBatchRejects",
+						"referenceName": "WWSQL003_HourlyLabellingLogsheet",
 						"type": "DatasetReference"
 					}
 				]
