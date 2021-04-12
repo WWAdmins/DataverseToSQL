@@ -342,172 +342,284 @@
 								},
 								"sink": {
 									"name": "Do not start run until CCP1 is complete Time",
-									"type": "String"
+									"type": "DateTime"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_docketvessel",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "Docket & Vessel",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_docketvesselsig",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Docket & Vessel Sig",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "crc5d_endofruncomments",
+									"type": "String"
+								},
 								"sink": {
 									"name": "End of Run Comments",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorbottlecount",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Bottle Count",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorbottlingto",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Bottling To",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorchecktime",
+									"type": "DateTime"
+								},
 								"sink": {
 									"name": "EOR Check Time",
 									"type": "DateTime"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorflowmetercheck",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Flow Meter Check",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorglassfragmentscheck",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Glass Fragments Check",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorinbottle",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR In Bottle",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorrinseheadinspection",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Rinse head inspection",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorrinseheadmedium",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "EOR Rinse head medium",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorrinsergaswatersupplyline1",
+									"type": "Decimal"
+								},
 								"sink": {
 									"name": "EOR Rinser Gas/Water Supply Line1",
 									"type": "Decimal"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorrinsergaswatersupplyline2",
+									"type": "Decimal"
+								},
 								"sink": {
 									"name": "EOR Rinser Gas/Water Supply Line2",
 									"type": "Decimal"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_eorrinserpressurefluctuations",
+									"type": "Decimal"
+								},
 								"sink": {
 									"name": "EOR Rinser Pressure Fluctuations",
 									"type": "Decimal"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_fillheights",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Fill Heights",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_fillercentringbellssealscheck",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Filler Centring Bells/Seals Check",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_fillerfillstemssterile",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Filler Fill Stems Sterile",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_filleroperation",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Filler Operation",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_fillervacuumon",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Filler Vacuum On",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "crc5d_filtrationcharges",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Filtration Charges",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_fliesinthefillerroom",
+									"type": "Boolean"
+								},
 								"sink": {
 									"name": "Flies in the filler room",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_flies",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Flies sig",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "crc5d_glassbottlecheck",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Glass Bottle Check",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_glassfrag",
+									"type": "Int32"
+								},
 								"sink": {
 									"name": "Glass Frag",
 									"type": "Int32"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_glassfragsig",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Glass Frag Sig",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_glasspumpcheck",
+									"type": "String"
+								},
 								"sink": {
 									"name": "Glass pump check sig",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_ccilscodesig",
+									"type": "String"
+								},
 								"sink": {
 									"name": "ILS Code Sig",
 									"type": "String"
 								}
 							},
 							{
+								"source": {
+									"name": "ww_ccilscode",
+									"type": "String"
+								},
 								"sink": {
 									"name": "ILSCode",
 									"type": "String"
