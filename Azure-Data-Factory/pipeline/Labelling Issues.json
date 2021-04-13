@@ -271,7 +271,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Filler Operation]"
+					"storedProcedureName": "[dbo].[sp_Labelling Issues]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
