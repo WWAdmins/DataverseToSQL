@@ -13,6 +13,1455 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Closure Batch Summary",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_closurebatchboxnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Box Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Closure Batch Summary",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Summary Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closureils",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure ILS",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarycomments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkexpirydate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Cork Expiry Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkmoisture",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Cork Moisture",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "OperatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchproductiondate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Production Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchreferencenumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Reference Number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarysupplier",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supplier",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsuppliercode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Supplier Code",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Closure Batch Summary",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Closure Batch Summary]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": [],
+				"lastPublishTime": "2021-03-24T02:34:10Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Filler Operation')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Filler Operator",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_filleroperationid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Filler operation ID",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_airramscrewcapper",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Air Ram Screw Capper",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_airramscrewcappersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Air Ram Screw Capper Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alcoholsterilisation",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Alcohol Sterilisation",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alcoholsterilisationsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Alcohol Sterilisation Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_allfilterspresent",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "All Filters Present",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_blbottlecodeandguiderailsset",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Code and Guide Rails Set",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_blbottlecoderrunningandlegible",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Coder Running and Legible",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccbrand",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Brand",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccbrandsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Brand Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccp1starttheruncheck",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CCP1 Start the Run Check",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccp1starttherunchecktime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "CCP1 Start the Run Check Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurehopperempty",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Closure Hopper Empty",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurehopperemptysig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Hopper Empty Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccclosuretype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Type",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccclosuretypesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Type Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_blcodeheight",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Code Height",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cccolour",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Colour",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cccoloursig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Colour Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_contactpointsforglassfrag",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Contact points for glass frag",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cccorkgradesize",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Grade/Size",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cccorkgradesizesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Grade/Size Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkerheadspacepressure",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Corker Headspace Pressure",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkerplungersset",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Corker Plungers Set",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkervacuumon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Corker Vacuum on",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_correctfilters",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Correct Filters",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_correctwineisbottled",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Correct wine is bottled sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_blcountzeroed",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Count Zeroed",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "CreatedOn",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_donotstartrununtilccp1iscomplete",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Do not start run until CCP1 is complete",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_donotstartrununtilccp1iscompletetime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Do not start run until CCP1 is complete Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_docketvessel",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Docket & Vessel",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_docketvesselsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Docket & Vessel Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_endofruncomments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "End of Run Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorbottlecount",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Bottle Count",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorbottlingto",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Bottling To",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorchecktime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "EOR Check Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorflowmetercheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Flow Meter Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorglassfragmentscheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Glass Fragments Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorinbottle",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR In Bottle",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorrinseheadinspection",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Rinse head inspection",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorrinseheadmedium",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "EOR Rinse head medium",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorrinsergaswatersupplyline1",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "EOR Rinser Gas/Water Supply Line1",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorrinsergaswatersupplyline2",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "EOR Rinser Gas/Water Supply Line2",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_eorrinserpressurefluctuations",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "EOR Rinser Pressure Fluctuations",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillheights",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Fill Heights",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillercentringbellssealscheck",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler Centring Bells/Seals Check",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerfillstemssterile",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler Fill Stems Sterile",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filleroperation",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler Operation",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillervacuumon",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler Vacuum On",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_filtrationcharges",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filtration Charges",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fliesinthefillerroom",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Flies in the filler room",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_flies",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Flies sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_glassbottlecheck",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Glass Bottle Check",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassfrag",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Glass Frag",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassfragsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Glass Frag Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glasspumpcheck",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Glass pump check sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccilscodesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ILS Code Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccilscode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ILSCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_inertgastofillerbowl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Inert Gas to Filler Bowl",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_inertgastorinser",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Inert Gas to Rinser",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_inertgastotanker",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Inert Gas to Tanker",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_isthisanorganicproduct",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Is this an Organic product",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_jawlubechecked",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Jaw Lube Checked",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_jawlubecheckedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Jaw Lube Checked Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_manualjogbottle",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Manual Jog 1x Bottle",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mfintegrityverificationsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "MF Integrity Verification Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_numberontagsfilters",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Number on tag(s) Filters",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_numberontagssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Number on tag(s) Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccplainprinted",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Plain / Printed",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ccplainprintedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Plain/Printed Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productlinecheck",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Product line check sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_refractbtl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Refract BTL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_refracttank",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Refract Tank",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_rinsermedium",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Rinser Medium",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_rinsermediumsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser Medium Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_run",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_blsampleattachedtospecsheet",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sample Attached to Spec Sheet",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_specsheetreadandsigned",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Spec sheet read and signed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationfilterintegrityverification",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sterilization Filter Integrity Verification Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationfinish",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Sterilization Finish",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationmembraneintegrity",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sterilization Membrane Integrity",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationprocess",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sterilization Process",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationprocesssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sterilization process Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationrfintegrityverificationsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sterilization RF Integrity Verification Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationrinserintegrity",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Sterilization Rinser Integrity",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationrunend",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Sterilization Run End",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationrunstart",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Sterilization Run Start",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationstart",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Sterilization Start",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sterilizationtemperature",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Sterilization Temperature",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh4",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H4",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh5",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H5",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh5",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers  H5",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh4",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H4",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_visualcolourmatchbtl",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visual Colour Match BTL",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_visualcolourmatchtank",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visual Colour Match Tank",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_winepump",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Wine pump (Select & Sign)",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_winepumpsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Wine pump sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_xraydensitybottles",
+											"type": "String"
+										},
+										"sink": {
+											"name": "X Ray Density Bottles",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_xraylimitsrejecting",
+											"type": "String"
+										},
+										"sink": {
+											"name": "X Ray Limits Rejecting",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_xrayseton",
+											"type": "String"
+										},
+										"sink": {
+											"name": "X Ray Set On",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "FillerOperation",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_FillerOperation",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Filler Operator",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Filler Operation]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Hourly Labelling Logsheet')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -1239,6 +2688,295 @@
 						"userProperties": [],
 						"typeProperties": {
 							"storedProcedureName": "[[dbo].[sp_Hourly Torque and Volume]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Labelling Issues')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Labelling Issues",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_labellingissue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Labelling Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlerub",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle Rub",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_brokenbottles",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Broken bottles",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonsrejected",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Cartons rejected",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_damagedscrewcaps",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Damaged screwcaps",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_datetime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Date Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteissue",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Issue",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleterejects",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassdefect",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Glass defects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_issue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lowfills",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Low fills",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_totalrejects",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Total Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labellingissuesid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Labelling Issues",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Labelling Issues",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Labelling Issues]"
 						},
 						"linkedServiceName": {
 							"referenceName": "WWSQL003",

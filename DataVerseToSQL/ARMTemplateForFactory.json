@@ -4406,6 +4406,445 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Labelling Issues')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Labelling Issues",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_labellingissue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Labelling Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlerub",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle Rub",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_brokenbottles",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Broken bottles",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonsrejected",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Cartons rejected",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_damagedscrewcaps",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Damaged screwcaps",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_datetime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Date Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteissue",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Issue",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleterejects",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassdefect",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Glass defects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_issue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lowfills",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Low fills",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_totalrejects",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Total Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labellingissuesid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Labelling Issues",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Labelling Issues",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Labelling Issues]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/LabellingIssues')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabellingIssues')]",
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LabellingIssues')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_labellingissues"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabellingIssues')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Labelling Issue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle Rub",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Broken bottles",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Cartons rejected",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Comments",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Damaged screwcaps",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Date Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Delete Issue",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Delete Rejects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Glass defects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Issue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Low fills",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Total Rejects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Labelling Issues",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Bill of Materials",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Labelling Issues"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
 		}
 	]
 }
