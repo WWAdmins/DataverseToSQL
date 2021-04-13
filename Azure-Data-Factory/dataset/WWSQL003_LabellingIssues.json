@@ -1,0 +1,121 @@
+{
+	"name": "WWSQL003_LabellingIssues",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Labelling Issue",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bottle Rub",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Broken bottles",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Cartons rejected",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Comments",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Damaged screwcaps",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Date Time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Delete Issue",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Delete Rejects",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Glass defects",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Issue",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Low fills",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Total Rejects",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Labelling Issues",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Bill of Materials",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Labelling Issues"
+		}
+	}
+}
