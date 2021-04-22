@@ -1,0 +1,384 @@
+{
+	"name": "Pre-Bottling Analysis",
+	"properties": {
+		"activities": [
+			{
+				"name": "Pre-Bottling Analysis",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "CommonDataServiceForAppsSource"
+					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ww_prebottlinganalysissummaryname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Pre-Bottling Analysis Summary Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Status",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_alc",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ALC %",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_alcnum",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ALC % Num",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_alcohol",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Alcohol %",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_alcbydistil",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Alcohol By Distil",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_alcoholbydistillation",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Alcohol By Distillation",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_basedo",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Base DO",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_co2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "CO2",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_customertankname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Customer Tank Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_date",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_density",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Density",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_fi",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "FI",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_initials",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Initials",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_initialscheck",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Initials Check",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_notes",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Notes",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_operator",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Operator",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_ph",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "pH",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_runname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Run Number",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_so2f",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "SO2F",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tankvolume",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Tank Volume",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tankerlookupname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tanker Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_temp",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_ts02",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "TS02",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_ts02num",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TS02 Num",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tso2",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "TSO2",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Created On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "importsequencenumber",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Import Sequence Number",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Modified On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "overriddencreatedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Record Created On",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_prebottlinganalysisid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Pre-Bottling Analysis",
+									"type": "Guid"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "PreBottlingAnalysis",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WWSQL003_PreBottlingAnalysis",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Merge Statement",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Pre-Bottling Analysis",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sp_Pre-Bottling Analysis]"
+				},
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
