@@ -1,0 +1,141 @@
+{
+	"name": "WWSQL003_OperatorBottlingBreakage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Area clean",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Area retimed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bottle Count",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Breakages",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Broken Bottles",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Colleague Sign",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Delete Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Disposed bottles",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Filler Op Sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Glass fragments visible",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Location of break",
+				"type": "nvarchar"
+			},
+			{
+				"name": "No breakages Sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Result of a crash",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Start up time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Time of break",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Type",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Operator Bottling Breakage",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Bill of Materials",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Operator Bottling Breakage"
+		}
+	}
+}
