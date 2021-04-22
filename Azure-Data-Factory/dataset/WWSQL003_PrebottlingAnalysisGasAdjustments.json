@@ -1,0 +1,16 @@
+{
+	"name": "WWSQL003_PrebottlingAnalysisGasAdjustments",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Pre-bottling Analysis Gas Adjustments"
+		}
+	}
+}
