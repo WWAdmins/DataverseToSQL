@@ -1,0 +1,1138 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"WWSQL003_DataverseDev": {
+			"type": "string"
+		},
+		"DataverseDev": {
+			"type": "string"
+		},
+		"WWSQL003_Dataverse_Staging": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Hourly Operator Bottling')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Hourly Operator Bottling",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_authorisedsig",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Authorised Sig",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterialsname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bill of Materials ID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlecodesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Code Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlecoloursig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Colour Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlelasersticker",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle laser sticker",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlelaserstickersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle laser sticker sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlenumberasperlasercoder",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle Number as Per Laser Coder",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlerubmark",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle Rub Mark",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottleshapesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Shape Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlingfrom",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottling from",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlingto",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottling to",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bowlvacuum",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Bowl Vacuum",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_checkdocketandphysicallycheckwineisrun",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Check docket and physically check wine is run",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_collectexportsamples",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Collect Export Samples",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkervacuum",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Corker Vacuum",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkervacuum08to10bar",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Corker Vacuum -0.8 to -1.0bar",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Line",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_do2frombottle",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "DO2 from Bottle",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_do2fromvessel",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "DO2 from vessel",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_exportsamplespicked",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Export samples picked",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillheight",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Fill Height",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerhead",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Filler Head # ",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerspeed",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Filler Speed",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filterdifferential",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Filter Differential",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filtrationpressuregauge",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Filtration Pressure Gauge",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_finalfilter",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Final Filter",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_flowmetercheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Flow Meter Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_foreignbodyvisualcheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Foreign Body / Visual Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gasfeedtocorker",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Gas feed to corker",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gasfeedtocorker1030kpa",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gas feed to corker 10 - 30kpa",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gasflowratetobowlline2",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gas Flow rate to Bowl (Line 2)",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gaspressuretobottlingtank",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Gas pressure to bottling tank",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassfragmentscheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Glass Fragments Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_inbottle",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "In bottle",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_intank",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "In tank",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lasercodeasperspec",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Laser code as per spec",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lasercodeonbottle",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Laser code on bottle",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lenticularfilter",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Lenticular Filter",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_n2buffervesselpressure",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "N2 buffer vessel pressure",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_neckcheck",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Neck Check",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_prefilter",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Pre Filter",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_prepcheck2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Prep Check 2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_prepcheck3",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Prep Check 3",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_prepchecksig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Prep Check Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pumpspeed",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pump Speed",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinseheadinspection",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Rinse head inspection",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinseheadmedium",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Rinse head medium",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsergaswatersupplyline1",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser Gas/Water Supply Line1",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsergaswatersupplyline2",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser Gas/Water Supply Line2",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserpressurefluctuations",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser Pressure Fluctuations",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rockstopper",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Rockstopper",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rockstopperfilter",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Rockstopper Filter",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_samplessig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Samples Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_stockcodesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Stock Code Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_temperature",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Temperature",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_timeofauthorisedauditcheck",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Time of Authorised Audit Check",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_timeofcheckmicrosampletaken",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Time of Check - Micro Sample Taken",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_xraychallengetest",
+											"type": "String"
+										},
+										"sink": {
+											"name": "X-Ray Challenge Test",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorbottlinghourlyid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Operator Bottling Hourly",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "HourlyOperatorBottling",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_HourlyOperatorBottling",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Hourly Operator Bottling",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Hourly Operator Bottling]"
+						},
+						"linkedServiceName": {
+							"referenceName": "[parameters('WWSQL003_DataverseDev')]",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/HourlyOperatorBottling')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyOperatorBottling')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/HourlyOperatorBottling')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('DataverseDev')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_operatorbottlinghourly"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyOperatorBottling')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('WWSQL003_Dataverse_Staging')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Authorised Sig",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bill of Materials ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle Code Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottle Colour Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottle laser sticker",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle laser sticker sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottle Number as Per Laser Coder",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle Rub Mark",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle Shape Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottling from",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottling to",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bowl Vacuum",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Check docket and physically check wine is run",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Collect Export Samples",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Corker Vacuum",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Corker Vacuum -0.8 to -1.0bar",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Delete Line",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "DO2 from Bottle",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "DO2 from vessel",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Export samples picked",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Fill Height",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Filler Head # ",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Filler Speed",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Filter Differential",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Filtration Pressure Gauge",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Final Filter",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Flow Meter Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Foreign Body / Visual Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Gas feed to corker",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Gas feed to corker 10 - 30kpa",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Gas Flow rate to Bowl (Line 2)",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Gas pressure to bottling tank",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Glass Fragments Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "In bottle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "In tank",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Laser code as per spec",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Laser code on bottle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Lenticular Filter",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "N2 buffer vessel pressure",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Neck Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Pre Filter",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Prep Check 2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Prep Check 3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Prep Check Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Pump Speed",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Rinse head inspection",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rinse head medium",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rinser Gas/Water Supply Line1",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Rinser Gas/Water Supply Line2",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Rinser Pressure Fluctuations",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Rockstopper",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rockstopper Filter",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Samples Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Stock Code Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Temperature",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Time of Authorised Audit Check",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Time of Check - Micro Sample Taken",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "X-Ray Challenge Test",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "date"
+					},
+					{
+						"name": "Operator Bottling Hourly",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Bill of Materials",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Hourly Operator Bottling"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

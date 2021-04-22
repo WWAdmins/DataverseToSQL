@@ -1,0 +1,273 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"WWSQL003_DataverseDev": {
+			"type": "string"
+		},
+		"DataverseDev": {
+			"type": "string"
+		},
+		"WWSQL003_Dataverse_Staging": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Run')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Run",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_runid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_runnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "RunNumber",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rundate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "RunDate",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_workorderid",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "WorkOrderID",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_workordertype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "WorkOrderType",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_vintage",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Vintage",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_variety",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Variety",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_runproductionlinename",
+											"type": "String"
+										},
+										"sink": {
+											"name": "ProductionLine",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "CreatedOn",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ModifiedOn",
+											"type": "DateTime"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Run",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_Run",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Run",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Run]"
+						},
+						"linkedServiceName": {
+							"referenceName": "[parameters('WWSQL003_DataverseDev')]",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Run')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_Run')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Run')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('DataverseDev')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_run"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_Run')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('WWSQL003_Dataverse_Staging')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "RunNumber",
+						"type": "nvarchar"
+					},
+					{
+						"name": "RunDate",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "WorkOrderID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WorkOrderType",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Vintage",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Variety",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ProductionLine",
+						"type": "nvarchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Run"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

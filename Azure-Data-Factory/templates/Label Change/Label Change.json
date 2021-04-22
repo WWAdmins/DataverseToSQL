@@ -1,0 +1,381 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name"
+		},
+		"WWSQL003_DataverseDev": {
+			"type": "string"
+		},
+		"DataverseDev": {
+			"type": "string"
+		},
+		"WWSQL003_Dataverse_Staging": {
+			"type": "string"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/Label Change')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Label Change",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterialname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bill of Material ID",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Line",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gap",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gap",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_height",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Height",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labelsmatchspecsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Labels match spec Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lean",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Lean",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet Number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_stockcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Stock Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labelchangeid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Label Change",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "LabelChange",
+								"type": "DatasetReference"
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_LabelChange",
+								"type": "DatasetReference"
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Label Change",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Label Change]"
+						},
+						"linkedServiceName": {
+							"referenceName": "[parameters('WWSQL003_DataverseDev')]",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/LabelChange')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabelChange')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LabelChange')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('DataverseDev')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_labelchange"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabelChange')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "[parameters('WWSQL003_Dataverse_Staging')]",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bill of Material ID",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Delete Line",
+						"type": "bit"
+					},
+					{
+						"name": "Gap",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 4
+					},
+					{
+						"name": "Height",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 4
+					},
+					{
+						"name": "Labels match spec Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Lean",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 4
+					},
+					{
+						"name": "Pallet Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Stock Code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Label Change",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Label Change"
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
