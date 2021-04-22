@@ -1,0 +1,30 @@
+{
+	"name": "WWSQL003_BOM",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Bill of Material",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "BOM ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Work Order ID",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Bill of Materials"
+		}
+	}
+}
