@@ -1,0 +1,16 @@
+{
+	"name": "WWSQL003_OperatorBottlingPreflight",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Operator Bottling Preflight"
+		}
+	}
+}
