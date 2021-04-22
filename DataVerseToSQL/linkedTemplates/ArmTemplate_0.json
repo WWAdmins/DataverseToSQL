@@ -11,33 +11,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'DataVerse'"
 		},
-		"FileServer1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'FileServer1'"
-		},
-		"WWSQL003_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'WWSQL003'"
-		},
-		"WWSQL003_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'WWSQL003'"
-		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
 			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
-		},
-		"FileServer1_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "C:\\Users\\tejaswi.datla\\Desktop\\TopMovies_Part1"
-		},
-		"FileServer1_properties_typeProperties_userId": {
-			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
-		},
-		"WWSQL003_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "Tejaswi.Datla@wineworks.co.nz"
 		}
 	},
 	"variables": {
@@ -92,6 +68,27 @@
 				"type": "SelfHosted",
 				"typeProperties": {}
 			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Bottle Batch Rejects1')]",
+			"type": "Microsoft.DataFactory/factories/templates",
+			"apiVersion": "2018-06-01",
+			"properties": {},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Operator Bottling Downtime')]",
+			"type": "Microsoft.DataFactory/factories/templates",
+			"apiVersion": "2018-06-01",
+			"properties": {},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Pre-bottling Analysis Sulphur Adjustments')]",
+			"type": "Microsoft.DataFactory/factories/templates",
+			"apiVersion": "2018-06-01",
+			"properties": {},
 			"dependsOn": []
 		},
 		{
@@ -372,74 +369,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RunReportBottleLabelPack')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_runreportbottlelabelpack"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "FileServer",
-				"typeProperties": {
-					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
-					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('FileServer1_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('WWSQL003_connectionString')]",
-					"userName": "[parameters('WWSQL003_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('WWSQL003_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
 			]
 		}
 	]

@@ -69,26 +69,8 @@
 					"DataVerse_password": {
 						"value": "[parameters('DataVerse_password')]"
 					},
-					"FileServer1_password": {
-						"value": "[parameters('FileServer1_password')]"
-					},
-					"WWSQL003_connectionString": {
-						"value": "[parameters('WWSQL003_connectionString')]"
-					},
-					"WWSQL003_password": {
-						"value": "[parameters('WWSQL003_password')]"
-					},
 					"DataVerse_properties_typeProperties_username": {
 						"value": "[parameters('DataVerse_properties_typeProperties_username')]"
-					},
-					"FileServer1_properties_typeProperties_host": {
-						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
-					},
-					"FileServer1_properties_typeProperties_userId": {
-						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
-					},
-					"WWSQL003_properties_typeProperties_userName": {
-						"value": "[parameters('WWSQL003_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -107,6 +89,24 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"FileServer1_password": {
+						"value": "[parameters('FileServer1_password')]"
+					},
+					"WWSQL003_connectionString": {
+						"value": "[parameters('WWSQL003_connectionString')]"
+					},
+					"WWSQL003_password": {
+						"value": "[parameters('WWSQL003_password')]"
+					},
+					"FileServer1_properties_typeProperties_host": {
+						"value": "[parameters('FileServer1_properties_typeProperties_host')]"
+					},
+					"FileServer1_properties_typeProperties_userId": {
+						"value": "[parameters('FileServer1_properties_typeProperties_userId')]"
+					},
+					"WWSQL003_properties_typeProperties_userName": {
+						"value": "[parameters('WWSQL003_properties_typeProperties_userName')]"
 					}
 				}
 			},
@@ -132,6 +132,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'DataVerseToSQL_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "DataVerseToSQL_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DataVerseToSQL_ArmTemplate_2')]"
 			]
 		}
 	]
