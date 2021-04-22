@@ -1,0 +1,96 @@
+{
+	"name": "WWSQL003_LabelChange",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Bill of Material ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Delete Line",
+				"type": "bit"
+			},
+			{
+				"name": "Gap",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 4
+			},
+			{
+				"name": "Height",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 4
+			},
+			{
+				"name": "Labels match spec Sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lean",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 4
+			},
+			{
+				"name": "Pallet Number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Stock Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Label Change",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Label Change"
+		}
+	}
+}
