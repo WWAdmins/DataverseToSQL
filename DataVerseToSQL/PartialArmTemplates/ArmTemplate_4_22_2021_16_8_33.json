@@ -6,38 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "DataVerseToSQL"
-		},
-		"DataVerse_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'DataVerse'"
-		},
-		"FileServer1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'FileServer1'"
-		},
-		"WWSQL003_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'WWSQL003'"
-		},
-		"WWSQL003_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'WWSQL003'"
-		},
-		"DataVerse_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
-		},
-		"FileServer1_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "C:\\Users\\tejaswi.datla\\Desktop\\TopMovies_Part1"
-		},
-		"FileServer1_properties_typeProperties_userId": {
-			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
-		},
-		"WWSQL003_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "Tejaswi.Datla@wineworks.co.nz"
 		}
 	},
 	"variables": {
@@ -139,15 +107,13 @@
 						"inputs": [
 							{
 								"referenceName": "BOM",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_BOM",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -183,8 +149,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/BOM')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BOM')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_BOM')]"
 			]
 		},
 		{
@@ -362,15 +327,13 @@
 						"inputs": [
 							{
 								"referenceName": "BottleBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_BottleBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -407,8 +370,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/BottleBatchSummary')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchSummary')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchSummary')]"
 			]
 		},
 		{
@@ -826,15 +788,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyLabellingLogsheet",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyLabellingLogsheet",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -869,11 +829,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-04-13T20:25:07Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HourlyLabellingLogsheet')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyLabellingLogsheet')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Hourly Operator Bottling')]",
@@ -1580,15 +1536,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyOperatorBottling",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyOperatorBottling",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -1624,8 +1578,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/HourlyOperatorBottling')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyOperatorBottling')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyOperatorBottling')]"
 			]
 		},
 		{
@@ -2383,15 +2336,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyTorqueandVolume",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyTorqueandVolume",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2425,11 +2376,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HourlyTorqueandVolume')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyTorqueandVolume')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Label Change')]",
@@ -2626,15 +2573,13 @@
 						"inputs": [
 							{
 								"referenceName": "LabelChange",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_LabelChange",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2670,8 +2615,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/LabelChange')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabelChange')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabelChange')]"
 			]
 		},
 		{
@@ -3159,15 +3103,13 @@
 						"inputs": [
 							{
 								"referenceName": "LabellingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003LabellingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -3203,8 +3145,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/LabellingPreflight')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003LabellingPreflight')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003LabellingPreflight')]"
 			]
 		},
 		{
@@ -3492,15 +3433,13 @@
 						"inputs": [
 							{
 								"referenceName": "OperatorBottlingBreakage",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_OperatorBottlingBreakage",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -3536,8 +3475,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/OperatorBottlingBreakage')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingBreakage')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingBreakage')]"
 			]
 		},
 		{
@@ -3835,15 +3773,13 @@
 						"inputs": [
 							{
 								"referenceName": "OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -3879,8 +3815,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/OperatorBottlingPreflight')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingPreflight')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingPreflight')]"
 			]
 		},
 		{
@@ -3998,15 +3933,13 @@
 						"inputs": [
 							{
 								"referenceName": "Operator",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_Operator",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -4042,8 +3975,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Operator')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_Operator')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_Operator')]"
 			]
 		},
 		{
@@ -4321,15 +4253,13 @@
 						"inputs": [
 							{
 								"referenceName": "PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -4365,8 +4295,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/PreBottlingAnalysisRecheck')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysisRecheck')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysisRecheck')]"
 			]
 		},
 		{
@@ -4714,15 +4643,13 @@
 						"inputs": [
 							{
 								"referenceName": "PreBottlingAnalysis",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PreBottlingAnalysis",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -4758,8 +4685,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/PreBottlingAnalysis')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysis')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysis')]"
 			]
 		},
 		{
@@ -5027,15 +4953,13 @@
 						"inputs": [
 							{
 								"referenceName": "PrebottlingAnalysisGasAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PrebottlingAnalysisGasAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -5071,8 +4995,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/PrebottlingAnalysisGasAdjustments')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PrebottlingAnalysisGasAdjustments')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_PrebottlingAnalysisGasAdjustments')]"
 			]
 		},
 		{
@@ -5460,15 +5383,13 @@
 						"inputs": [
 							{
 								"referenceName": "RunReportBottleLabelPack",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_RunReportBottleLabelPack",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -5504,8 +5425,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/RunReportBottleLabelPack')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_RunReportBottleLabelPack')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_RunReportBottleLabelPack')]"
 			]
 		},
 		{
@@ -5643,15 +5563,13 @@
 						"inputs": [
 							{
 								"referenceName": "Run",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_Run",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -5687,8 +5605,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Run')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_Run')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_Run')]"
 			]
 		},
 		{
@@ -5732,26 +5649,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/HourlyLabellingLogsheet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_hourlylabellinglogsheet"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/HourlyOperatorBottling')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -5765,26 +5662,6 @@
 				"schema": [],
 				"typeProperties": {
 					"entityName": "ww_operatorbottlinghourly"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HourlyTorqueandVolume')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_hourlytorqueandvolume"
 				}
 			},
 			"dependsOn": [
@@ -6008,9 +5885,7 @@
 					"table": "Labelling Preflight"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_BOM')]",
@@ -6043,9 +5918,7 @@
 					"table": "Bill of Materials"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchSummary')]",
@@ -6064,30 +5937,7 @@
 					"table": "Bottle Batch Summary"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyLabellingLogsheet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Hourly Labelling Logsheet"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyOperatorBottling')]",
@@ -6433,365 +6283,7 @@
 					"table": "Hourly Operator Bottling"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyTorqueandVolume')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Key",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Adjustment",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Average Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Cap Colour Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cap ILS Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cap Printing Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Branding Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork ILS Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Insertion Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Length Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Moisture Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Printing Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Delete Line",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Density",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Empty Bottle Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Fill Height 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Gaping / Broken Bridges",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Gross Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Head Space Measurement Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Head Space Pressure Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Nett Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Pull Tuck Test",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Radial Movement Check Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Redraw Seal Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rim Impression",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Screwcapper chute Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tare Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Torque Break 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 10",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 6",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 7",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 8",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 9",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque cap 1",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 10",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 4",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 5",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 6",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 7",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 8",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 9",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque Slip 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 10",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 6",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 7",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 8",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 9",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Hourly Torque and Volume",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Tanker",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Hourly Torque and Volume"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabelChange')]",
@@ -6890,9 +6382,7 @@
 					"table": "Label Change"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_Operator')]",
@@ -6954,9 +6444,7 @@
 					"table": "Operator"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingBreakage')]",
@@ -7100,9 +6588,7 @@
 					"table": "Operator Bottling Breakage"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingPreflight')]",
@@ -7121,9 +6607,7 @@
 					"table": "Operator Bottling Preflight"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysis')]",
@@ -7302,9 +6786,7 @@
 					"table": "Pre-Bottling Analysis"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysisRecheck')]",
@@ -7445,9 +6927,7 @@
 					"table": "Pre-Bottling Analysis Recheck"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisGasAdjustments')]",
@@ -7466,9 +6946,7 @@
 					"table": "Pre-bottling Analysis Gas Adjustments"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_Run')]",
@@ -7519,9 +6997,7 @@
 					"table": "Run"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_RunReportBottleLabelPack')]",
@@ -7722,9 +7198,7 @@
 					"table": "Run Report - Bottle/Label/Pack"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/DataVerse')]",
@@ -7737,62 +7211,14 @@
 					"deploymentType": "Online",
 					"serviceUri": "https://wineworks.crm6.dynamics.com/",
 					"authenticationType": "Office365",
-					"username": "[parameters('DataVerse_properties_typeProperties_username')]",
+					"username": "tejaswi.Datla@wineworks.co.nz",
 					"password": {
 						"type": "SecureString",
-						"value": "[parameters('DataVerse_password')]"
+						"value": "**********"
 					}
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "FileServer",
-				"typeProperties": {
-					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
-					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('FileServer1_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('WWSQL003_connectionString')]",
-					"userName": "[parameters('WWSQL003_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('WWSQL003_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
-			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Every Hour')]",
@@ -7811,16 +7237,6 @@
 						"timeZone": "New Zealand Standard Time"
 					}
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
 			},
 			"dependsOn": []
 		}
