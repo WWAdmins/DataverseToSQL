@@ -1,0 +1,198 @@
+{
+	"name": "WWSQL003_RunReportBottleLabelPack",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bill of Materials ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "cases 1",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases 2",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases 3",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases 4",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases 5",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases total 1",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases total 2",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases total 3",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases total 4",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "cases total 5",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "Internal Notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Pallets / Bins 1",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pallets / bins 2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pallets / bins 3",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pallets / bins 4",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pallets / bins 5",
+				"type": "nvarchar"
+			},
+			{
+				"name": "pallets / bins each containing 2",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pallets / bins each containing 3",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pallets / bins each containing 4",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pallets / bins each containing 5",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Plus Cases dispatched off line",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "Production Notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Run Completed",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Run Report Sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Total Cases Produced",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "Total Cases To Warehouse",
+				"type": "decimal",
+				"precision": 9,
+				"scale": 5
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Run Report - Bottle/Label/Pack",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Run Report - Bottle/Label/Pack"
+		}
+	}
+}
