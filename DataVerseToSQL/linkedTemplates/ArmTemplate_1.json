@@ -37,6 +37,24 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Run')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_run"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/RunReportBottleLabelPack')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -99,60 +117,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/BottleBatchRejects')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_bottlebatchrejects"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OperatorBottlingDowntime')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operatorbottlingdowntime"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisSulphurAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysissulphuradj"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003LabellingPreflight')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -209,6 +173,27 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchRejects')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Bottle Batch Rejects"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchSummary')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -223,6 +208,513 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Bottle Batch Summary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_FillerOperation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Filler operation ID",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Status",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Air Ram Screw Capper",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Air Ram Screw Capper Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Alcohol Sterilisation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Alcohol Sterilisation Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "All Filters Present",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottle Code and Guide Rails Set",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Bottle Coder Running and Legible",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Brand",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Brand Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CCP1 Start the Run Check",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CCP1 Start the Run Check Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Closure Hopper Empty",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure Hopper Empty Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure Type",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure Type Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Code Height",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Colour",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Colour Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Contact points for glass frag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Cork Grade/Size",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Cork Grade/Size Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Corker Headspace Pressure",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Corker Plungers Set",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Corker Vacuum on",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Correct Filters",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Correct wine is bottled sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Count Zeroed",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CreatedOn",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Do not start run until CCP1 is complete",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Do not start run until CCP1 is complete Time",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Docket & Vessel",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Docket & Vessel Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "End of Run Comments",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Bottle Count",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "EOR Bottle Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Bottling To",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Check Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "EOR Flow Meter Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "EOR Glass Fragments Check",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "EOR In Bottle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Rinse head inspection",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Rinse head medium",
+						"type": "nvarchar"
+					},
+					{
+						"name": "EOR Rinser Gas/Water Supply Line1",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "EOR Rinser Gas/Water Supply Line2",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "EOR Rinser Pressure Fluctuations",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Fill Heights",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filler Centring Bells/Seals Check",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filler Fill Stems Sterile",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filler Operation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filler Vacuum On",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Filtration Charges",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Flies in the filler room",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Flies in the filler room_old",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Flies sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Glass Bottle Check",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Glass Frag",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Glass Frag Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Glass pump check sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ILS Code Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ILSCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Inert Gas to Filler Bowl",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Inert Gas to Rinser",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Inert Gas to Tanker",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Is this an Organic product",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Jaw Lube Checked",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Jaw Lube Checked Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Manual Jog 1x Bottle",
+						"type": "nvarchar"
+					},
+					{
+						"name": "MF Integrity Verification Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Number on tag(s) Filters",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Number on tag(s) Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Plain / Printed",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Plain/Printed Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Product line check sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Refract BTL",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Refract Tank",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rinser Medium",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rinser Medium Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Rollers Lubed",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Run",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Sample Attached to Spec Sheet",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Spec sheet read and signed sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization Filter Integrity Verification Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization Finish",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Sterilization Membrane Integrity",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization Process",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization process Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization RF Integrity Verification Sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization Rinser Integrity",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Sterilization Run End",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Sterilization Run Start",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Sterilization Start",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Sterilization Temperature",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Thread Rollers H1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Thread Rollers H2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Thread Rollers H3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Thread Rollers H4",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Thread Rollers H5",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Tuck Rollers  H5",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Tuck Rollers H1",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Tuck Rollers H2",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Tuck Rollers H3",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Tuck Rollers H4",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Visual Colour Match BTL",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Visual Colour Match Tank",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Wine pump (Select & Sign)",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Wine pump sig",
+						"type": "nvarchar"
+					},
+					{
+						"name": "X Ray Density Bottles",
+						"type": "nvarchar"
+					},
+					{
+						"name": "X Ray Limits Rejecting",
+						"type": "nvarchar"
+					},
+					{
+						"name": "X Ray Set On",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Filler operation"
 				}
 			},
 			"dependsOn": [
@@ -1266,6 +1758,103 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingDowntime')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bill of Materials ID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Delete Line",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Reason",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Start",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Stop",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Total Minutes",
+						"type": "decimal",
+						"precision": 9,
+						"scale": 2
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "date"
+					},
+					{
+						"name": "Operator Bottling Downtime",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Bill of Materials",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Operator Bottling Downtime"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingPreflight')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1625,59 +2214,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Pre-bottling Analysis Gas Adjustments"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_Run')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "RunNumber",
-						"type": "nvarchar"
-					},
-					{
-						"name": "RunDate",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "WorkOrderID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "WorkOrderType",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Vintage",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Variety",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ProductionLine",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Run"
 				}
 			},
 			"dependsOn": [
