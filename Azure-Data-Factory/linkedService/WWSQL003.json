@@ -7,7 +7,7 @@
 		"typeProperties": {
 			"connectionString": "integrated security=True;data source=WWSQL003;initial catalog=DataVerse_Staging",
 			"userName": "Tejaswi.Datla@wineworks.co.nz",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIyZjA0MzI1OS0yYmU2LTQyYmEtYjM0Mi00MDg3ZjBmNWU3ZmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0MjBhMThjMi03OWJlLTQ1MWUtOWQwOS1hMjk3N2MxZWIyNTUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
