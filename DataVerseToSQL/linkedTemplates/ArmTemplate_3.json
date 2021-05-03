@@ -390,6 +390,16 @@
 											"name": "Run Report - Bottle/Label/Pack",
 											"type": "Guid"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Material",
+											"type": "Guid"
+										}
 									}
 								]
 							}

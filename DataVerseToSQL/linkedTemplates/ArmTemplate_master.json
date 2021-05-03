@@ -25,7 +25,7 @@
 		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
+			"defaultValue": "workflows@wineworks.co.nz"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",

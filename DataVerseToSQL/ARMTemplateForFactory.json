@@ -25,7 +25,7 @@
 		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
+			"defaultValue": "workflows@wineworks.co.nz"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",
@@ -811,7 +811,7 @@
 										},
 										"sink": {
 											"name": "Closure Type",
-											"type": "Int32"
+											"type": "String"
 										}
 									},
 									{
@@ -841,7 +841,7 @@
 										},
 										"sink": {
 											"name": "Colour",
-											"type": "Int32"
+											"type": "String"
 										}
 									},
 									{
@@ -1301,7 +1301,7 @@
 										},
 										"sink": {
 											"name": "Jaw Lube Checked",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -1371,7 +1371,7 @@
 										},
 										"sink": {
 											"name": "Plain / Printed",
-											"type": "Int32"
+											"type": "String"
 										}
 									},
 									{
@@ -1451,7 +1451,7 @@
 										},
 										"sink": {
 											"name": "Sample Attached to Spec Sheet",
-											"type": "Int32"
+											"type": "String"
 										}
 									},
 									{
@@ -1501,7 +1501,7 @@
 										},
 										"sink": {
 											"name": "Sterilization Process",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -1532,26 +1532,6 @@
 										"sink": {
 											"name": "Sterilization Rinser Integrity",
 											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_sterilizationrunend",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Sterilization Run End",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_sterilizationrunstart",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Sterilization Run Start",
-											"type": "DateTime"
 										}
 									},
 									{
@@ -1676,22 +1656,12 @@
 									},
 									{
 										"source": {
-											"name": "ww_visualcolourmatchbtl",
-											"type": "String"
+											"name": "ww_visualcolourmatchtankbtl",
+											"type": "Int32"
 										},
 										"sink": {
-											"name": "Visual Colour Match BTL",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_visualcolourmatchtank",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Visual Colour Match Tank",
-											"type": "String"
+											"name": "Visual Colour Match Tank/BTL",
+											"type": "Int32"
 										}
 									},
 									{
@@ -1701,7 +1671,7 @@
 										},
 										"sink": {
 											"name": "Wine pump (Select & Sign)",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -7404,6 +7374,16 @@
 										},
 										"sink": {
 											"name": "Run Report - Bottle/Label/Pack",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Material",
 											"type": "Guid"
 										}
 									}

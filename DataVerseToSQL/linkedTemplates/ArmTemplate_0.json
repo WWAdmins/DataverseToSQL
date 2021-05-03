@@ -13,7 +13,7 @@
 		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
+			"defaultValue": "workflows@wineworks.co.nz"
 		}
 	},
 	"variables": {
