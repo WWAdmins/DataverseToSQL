@@ -25,7 +25,7 @@
 		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
-			"defaultValue": "workflows@wineworks.co.nz"
+			"defaultValue": "wwdigital@wineworks.co.nz"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",
@@ -37,7 +37,7 @@
 		},
 		"WWSQL003_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "Tejaswi.Datla@wineworks.co.nz"
+			"defaultValue": "wineworksgroup\\WWG_Service"
 		}
 	},
 	"variables": {
@@ -10597,6 +10597,404 @@
 				"type": "SelfHosted",
 				"typeProperties": {}
 			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ClosureBatchSummary')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_closurebatchsummary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_ClosureBatchSummary')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Box Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Closure Batch Code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure Batch Summary",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Closure Batch Summary Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure ILS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Comments",
+						"type": "text"
+					},
+					{
+						"name": "Cork Expiry Date",
+						"type": "date"
+					},
+					{
+						"name": "Cork Moisture",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OperatorCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Production Date",
+						"type": "date"
+					},
+					{
+						"name": "Record Created On",
+						"type": "date"
+					},
+					{
+						"name": "Reference Number",
+						"type": "nchar"
+					},
+					{
+						"name": "Run",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Supplier",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Supplier Code",
+						"type": "nchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Closure Batch Summary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Closure Batch Summary",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_closurebatchboxnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Box Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Closure Batch Summary",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Summary Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closureils",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure ILS",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarycomments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkexpirydate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Cork Expiry Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkmoisture",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Cork Moisture",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "OperatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchproductiondate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Production Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchreferencenumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Reference Number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarysupplier",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supplier",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsuppliercode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Supplier Code",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Closure Batch Summary",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Closure Batch Summary]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": [],
+				"lastPublishTime": "2021-03-24T02:34:10Z"
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ClosureBatchSummary')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_ClosureBatchSummary')]",
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary1')]",
+			"type": "Microsoft.DataFactory/factories/templates",
+			"apiVersion": "2018-06-01",
+			"properties": {},
 			"dependsOn": []
 		}
 	]

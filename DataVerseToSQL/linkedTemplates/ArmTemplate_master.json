@@ -25,7 +25,7 @@
 		},
 		"DataVerse_properties_typeProperties_username": {
 			"type": "string",
-			"defaultValue": "workflows@wineworks.co.nz"
+			"defaultValue": "wwdigital@wineworks.co.nz"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"type": "string",
@@ -37,7 +37,7 @@
 		},
 		"WWSQL003_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "Tejaswi.Datla@wineworks.co.nz"
+			"defaultValue": "wineworksgroup\\WWG_Service"
 		},
 		"containerUri": {
 			"type": "string",

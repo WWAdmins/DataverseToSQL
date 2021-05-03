@@ -18,7 +18,7 @@
 			"value": ""
 		},
 		"DataVerse_properties_typeProperties_username": {
-			"value": "workflows@wineworks.co.nz"
+			"value": "wwdigital@wineworks.co.nz"
 		},
 		"FileServer1_properties_typeProperties_host": {
 			"value": "C:\\Users\\tejaswi.datla\\Desktop\\TopMovies_Part1"
@@ -27,7 +27,7 @@
 			"value": "tejaswi.Datla@wineworks.co.nz"
 		},
 		"WWSQL003_properties_typeProperties_userName": {
-			"value": "Tejaswi.Datla@wineworks.co.nz"
+			"value": "wineworksgroup\\WWG_Service"
 		}
 	}
 }
