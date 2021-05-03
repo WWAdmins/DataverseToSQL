@@ -37,6 +37,24 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisGasAdjustments')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_prebottlinganalysisgasadjustments"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisSulphurAdjustments')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -135,24 +153,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ClosureBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_closurebatchsummary"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003LabellingPreflight')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -244,6 +244,113 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Bottle Batch Summary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_ClosureBatchSummary')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Box Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Closure Batch Code",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure Batch Summary",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Closure Batch Summary Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Closure ILS",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Comments",
+						"type": "text"
+					},
+					{
+						"name": "Cork Expiry Date",
+						"type": "date"
+					},
+					{
+						"name": "Cork Moisture",
+						"type": "decimal",
+						"precision": 18,
+						"scale": 0
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "OperatorCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Production Date",
+						"type": "date"
+					},
+					{
+						"name": "Record Created On",
+						"type": "date"
+					},
+					{
+						"name": "Reference Number",
+						"type": "nchar"
+					},
+					{
+						"name": "Run",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Supplier",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Supplier Code",
+						"type": "nchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Closure Batch Summary"
 				}
 			},
 			"dependsOn": [
@@ -1584,6 +1691,132 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabellingIssues')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Labelling Issue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Bottle Rub",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Broken bottles",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Cartons rejected",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Comments",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Damaged screwcaps",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Date Time",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Delete Issue",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Delete Rejects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Glass defects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Issue",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Low fills",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Total Rejects",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Labelling Issues",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Bill of Materials",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Labelling Issues"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_Operator')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1884,208 +2117,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Operator Bottling Downtime"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingPreflight')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Operator Bottling Preflight"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysis')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Pre-Bottling Analysis Summary Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ALC %",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ALC % Num",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Alcohol %",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Alcohol By Distil",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Alcohol By Distillation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Base DO",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "CO2",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Customer Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Density",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 5
-					},
-					{
-						"name": "FI",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Initials",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Initials Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Notes",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pH",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Run Number",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SO2F",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Tank Volume",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Tanker Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Temp",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "TS02",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "TS02 Num",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "TSO2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Pre-Bottling Analysis",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-Bottling Analysis"
 				}
 			},
 			"dependsOn": [

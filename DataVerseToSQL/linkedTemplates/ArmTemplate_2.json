@@ -13,6 +13,204 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingPreflight')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Operator Bottling Preflight"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysis')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Pre-Bottling Analysis Summary Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ALC %",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "ALC % Num",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Alcohol %",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Alcohol By Distil",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Alcohol By Distillation",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Base DO",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "CO2",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Customer Tank Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Date",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Density",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 5
+					},
+					{
+						"name": "FI",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Initials",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Initials Check",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Notes",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Operator",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "pH",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Run Number",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SO2F",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "Tank Volume",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Tanker Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Temp",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "TS02",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "TS02 Num",
+						"type": "decimal",
+						"precision": 5,
+						"scale": 2
+					},
+					{
+						"name": "TSO2",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Modified On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Record Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Pre-Bottling Analysis",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Pre-Bottling Analysis"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysisRecheck')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -555,111 +753,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Run Report - Bottle/Label/Pack"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_ClosureBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Box Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Closure Batch Code",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure Batch Summary",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Closure Batch Summary Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure ILS",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Comments",
-						"type": "text"
-					},
-					{
-						"name": "Cork Expiry Date",
-						"type": "date"
-					},
-					{
-						"name": "Cork Moisture",
-						"type": "decimal",
-						"precision": 18,
-						"scale": 0
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "OperatorCode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Production Date",
-						"type": "date"
-					},
-					{
-						"name": "Record Created On",
-						"type": "date"
-					},
-					{
-						"name": "Reference Number",
-						"type": "nchar"
-					},
-					{
-						"name": "Run",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Supplier",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Supplier Code",
-						"type": "nchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Closure Batch Summary"
 				}
 			},
 			"dependsOn": []
@@ -1230,6 +1323,266 @@
 				],
 				"annotations": [],
 				"lastPublishTime": "2021-03-24T00:31:54Z"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Closure Batch Summary",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_closurebatchboxnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Box Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Closure Batch Summary",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummaryname",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure Batch Summary Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closureils",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure ILS",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarycomments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkexpirydate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Cork Expiry Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchcorkmoisture",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Cork Moisture",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "OperatorCode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchproductiondate",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Production Date",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchreferencenumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Reference Number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsummarysupplier",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supplier",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closurebatchsuppliercode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Supplier Code",
+											"type": "String"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_ClosureBatchSummary",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Closure Batch Summary",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Closure Batch Summary]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": [],
+				"lastPublishTime": "2021-03-24T02:34:10Z"
 			},
 			"dependsOn": []
 		},
@@ -4640,6 +4993,295 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Labelling Issues')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Labelling Issues",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_labellingissue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Labelling Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlerub",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Bottle Rub",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_brokenbottles",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Broken bottles",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonsrejected",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Cartons rejected",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_damagedscrewcaps",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Damaged screwcaps",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_datetime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Date Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteissue",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Issue",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleterejects",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_glassdefect",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Glass defects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_issue",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Issue",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lowfills",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Low fills",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_totalrejects",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Total Rejects",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labellingissuesid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Labelling Issues",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_LabellingIssues",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Labelling Issues",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Labelling Issues]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Labelling Preflight')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -5725,825 +6367,6 @@
 				"annotations": []
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Operator Bottling Preflight')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Operator Bottling Preflight",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource"
-							},
-							"sink": {
-								"type": "SqlServerSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "ww_name",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Status",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_billofmaterialsname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "BOM ID",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_ccp1starttherun",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "CCP1 Start the Run",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_ccp1starttherunsig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "CCP1 Start the Run Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_donotstartrununtilccp1completesig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Do not start run until CCP1 complete Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_filterintegrityverification",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Filter Integrity Verification",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_membraneintegrity",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Membrane Integrity",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_integrityverificationsig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "MF Integrity Verification Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_operatorcode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Operator Code",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_organicproduct",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Organic Product",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_organicproductsig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Organic product Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_rfintegrityverificationsig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "RF Integrity verification Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_rinserintegrity",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Rinser Integrity",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_runend",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Run End",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_runstart",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Run Start",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_sterilizationfinish",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Sterilization Finish",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_sterilizationprocesssig",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Sterilization process Sig",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_sterilizationstart",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Sterilization Start",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "crc5d_sterilizationtemperature",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "Sterilization Temperature",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Import Sequence Number",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Modified On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Record Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_operatorbottlingid",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Operator Bottling",
-											"type": "Guid"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_billofmaterials",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Bill of Materials",
-											"type": "Guid"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "WWSQL003_OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Merge Statement",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "Operator Bottling Preflight",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[sp_Operator Bottling Preflight]"
-						},
-						"linkedServiceName": {
-							"referenceName": "WWSQL003",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Operator')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Operator",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource"
-							},
-							"sink": {
-								"type": "SqlServerSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "ww_code",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Code",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_initials",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Initials",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Status",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Import Sequence Number",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Modified On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Record Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_operatorid",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Operator",
-											"type": "Guid"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Operator",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "WWSQL003_Operator",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Merge Statement",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "Operator",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[sp_Operator]"
-						},
-						"linkedServiceName": {
-							"referenceName": "WWSQL003",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Pre-Bottling Analysis Recheck')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Pre-Bottling Analysis Recheck",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource"
-							},
-							"sink": {
-								"type": "SqlServerSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "ww_prebottlinganalysisrechecksummaryname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Pre-Bottling Analysis Recheck Summary Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Status",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_tankerlookupname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Tanker Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_alc",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "ALC %",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_alcnum",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "ALC % Num",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_basedo",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "Base DO",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_co2",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "CO2",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_customertankname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Customer Tank Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_date",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Date",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_distill",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Distill",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_distillnum",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "Distill #",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_extraanalysis",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Extra Analysis",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_fso2",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "FSO2",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_initials",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Initials",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_operator",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Operator",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_runname",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Run Number",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_temp",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "Temp",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_tso2",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "TSO2",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_tso2mg",
-											"type": "Decimal"
-										},
-										"sink": {
-											"name": "TSO2 mg",
-											"type": "Decimal"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "importsequencenumber",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Import Sequence Number",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Modified On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Record Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_prebottlinganalysisrecheckid",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Pre-Bottling Analysis Recheck",
-											"type": "Guid"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "WWSQL003_PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Merge Statement",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "Pre-Bottling Analysis Recheck",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[sp_Operator Bottling Preflight]"
-						},
-						"linkedServiceName": {
-							"referenceName": "WWSQL003",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysisRecheck')]"
-			]
 		}
 	]
 }
