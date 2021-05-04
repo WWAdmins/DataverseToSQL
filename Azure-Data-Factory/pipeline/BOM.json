@@ -129,7 +129,7 @@
 				}
 			},
 			{
-				"name": "BOM fail email",
+				"name": "Data Copy fail email",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
@@ -160,7 +160,7 @@
 				}
 			},
 			{
-				"name": "BOM SP fail",
+				"name": "SP Fail Email",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
