@@ -6,38 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "DataVerseToSQL"
-		},
-		"DataVerse_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'DataVerse'"
-		},
-		"FileServer1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'FileServer1'"
-		},
-		"WWSQL003_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'WWSQL003'"
-		},
-		"WWSQL003_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'WWSQL003'"
-		},
-		"DataVerse_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "wwdigital@wineworks.co.nz"
-		},
-		"FileServer1_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "C:\\Users\\tejaswi.datla\\Desktop\\TopMovies_Part1"
-		},
-		"FileServer1_properties_typeProperties_userId": {
-			"type": "string",
-			"defaultValue": "tejaswi.Datla@wineworks.co.nz"
-		},
-		"WWSQL003_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "wineworksgroup\\WWG_Service"
 		}
 	},
 	"variables": {
@@ -139,15 +107,13 @@
 						"inputs": [
 							{
 								"referenceName": "BOM",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_BOM",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -200,7 +166,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -232,7 +197,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -245,11 +209,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/BOM')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BOM')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Bottle Batch Rejects')]",
@@ -416,15 +376,13 @@
 						"inputs": [
 							{
 								"referenceName": "BottleBatchRejects",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_BottleBatchRejects",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -477,7 +435,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -509,7 +466,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -523,11 +479,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-03-25T23:30:14Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/BottleBatchRejects')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchRejects')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Bottle Batch Summary')]",
@@ -704,15 +656,13 @@
 						"inputs": [
 							{
 								"referenceName": "BottleBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_BottleBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -765,7 +715,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -797,7 +746,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -811,11 +759,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-03-24T00:31:54Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/BottleBatchSummary')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BottleBatchSummary')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary')]",
@@ -1032,15 +976,13 @@
 						"inputs": [
 							{
 								"referenceName": "ClosureBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_ClosureBatchSummary",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -1093,7 +1035,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -1125,7 +1066,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -1139,11 +1079,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-03-24T02:34:10Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ClosureBatchSummary')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_ClosureBatchSummary')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Filler Operation')]",
@@ -2260,15 +2196,13 @@
 						"inputs": [
 							{
 								"referenceName": "FillerOperation",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_FillerOperation",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2321,7 +2255,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -2353,7 +2286,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -2366,11 +2298,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/FillerOperation')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_FillerOperation')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Hourly Labelling Logsheet')]",
@@ -2787,15 +2715,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyLabellingLogsheet",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyLabellingLogsheet",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -2848,7 +2774,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -2880,7 +2805,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -2894,11 +2818,7 @@
 				"annotations": [],
 				"lastPublishTime": "2021-04-13T20:25:07Z"
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HourlyLabellingLogsheet')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyLabellingLogsheet')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Hourly Operator Bottling')]",
@@ -3605,15 +3525,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyOperatorBottling",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyOperatorBottling",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -3666,7 +3584,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -3698,7 +3615,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -3711,11 +3627,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HourlyOperatorBottling')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyOperatorBottling')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Hourly Torque and Volume')]",
@@ -4472,15 +4384,13 @@
 						"inputs": [
 							{
 								"referenceName": "HourlyTorqueandVolume",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_HourlyTorqueandVolume",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -4533,7 +4443,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -4565,7 +4474,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -4578,11 +4486,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HourlyTorqueandVolume')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_HourlyTorqueandVolume')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Label Change')]",
@@ -4779,15 +4683,13 @@
 						"inputs": [
 							{
 								"referenceName": "LabelChange",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_LabelChange",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -4840,7 +4742,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -4872,7 +4773,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -4885,11 +4785,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/LabelChange')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabelChange')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Labelling Issues')]",
@@ -5136,15 +5032,13 @@
 						"inputs": [
 							{
 								"referenceName": "LabellingIssues",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_LabellingIssues",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -5197,7 +5091,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -5229,7 +5122,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -5242,11 +5134,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/LabellingIssues')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_LabellingIssues')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Labelling Preflight')]",
@@ -5733,15 +5621,13 @@
 						"inputs": [
 							{
 								"referenceName": "LabellingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003LabellingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -5794,7 +5680,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -5826,7 +5711,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -5839,11 +5723,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/LabellingPreflight')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003LabellingPreflight')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Operator Bottling Breakage')]",
@@ -6130,15 +6010,13 @@
 						"inputs": [
 							{
 								"referenceName": "OperatorBottlingBreakage",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_OperatorBottlingBreakage",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -6191,7 +6069,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6223,7 +6100,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6236,11 +6112,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/OperatorBottlingBreakage')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingBreakage')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Operator Bottling Downtime')]",
@@ -6427,15 +6299,13 @@
 						"inputs": [
 							{
 								"referenceName": "OperatorBottlingDowntime",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_OperatorBottlingDowntime",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -6488,7 +6358,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6520,7 +6389,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6533,11 +6401,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/OperatorBottlingDowntime')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingDowntime')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Operator Bottling Preflight')]",
@@ -6834,15 +6698,13 @@
 						"inputs": [
 							{
 								"referenceName": "OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_OperatorBottlingPreflight",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -6895,7 +6757,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6927,7 +6788,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -6940,11 +6800,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/OperatorBottlingPreflight')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_OperatorBottlingPreflight')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Operator')]",
@@ -7061,15 +6917,13 @@
 						"inputs": [
 							{
 								"referenceName": "Operator",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_Operator",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -7122,7 +6976,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -7154,7 +7007,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -7167,11 +7019,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Operator')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_Operator')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Pre-Bottling Analysis Recheck')]",
@@ -7448,15 +7296,13 @@
 						"inputs": [
 							{
 								"referenceName": "PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PreBottlingAnalysisRecheck",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -7509,7 +7355,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -7541,7 +7386,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -7554,11 +7398,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/PreBottlingAnalysisRecheck')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysisRecheck')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Pre-Bottling Analysis')]",
@@ -7905,15 +7745,13 @@
 						"inputs": [
 							{
 								"referenceName": "PreBottlingAnalysis",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PreBottlingAnalysis",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -7966,7 +7804,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -7998,7 +7835,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -8011,11 +7847,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/PreBottlingAnalysis')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PreBottlingAnalysis')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Pre-bottling Analysis Sulphur Adjustments')]",
@@ -8282,15 +8114,13 @@
 						"inputs": [
 							{
 								"referenceName": "PrebottlingAnalysisSulphurAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PrebottlingAnalysisSulphurAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -8343,7 +8173,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -8375,7 +8204,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -8388,11 +8216,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/PrebottlingAnalysisSulphurAdjustments')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PrebottlingAnalysisSulphurAdjustments')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisGasAdjustments')]",
@@ -8659,15 +8483,13 @@
 						"inputs": [
 							{
 								"referenceName": "PrebottlingAnalysisGasAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_PrebottlingAnalysisGasAdjustments",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -8720,7 +8542,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -8752,7 +8573,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -8765,11 +8585,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/PrebottlingAnalysisGasAdjustments')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_PrebottlingAnalysisGasAdjustments')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Run Report - BottleLabelPack')]",
@@ -9166,15 +8982,13 @@
 						"inputs": [
 							{
 								"referenceName": "RunReportBottleLabelPack",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_RunReportBottleLabelPack",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -9227,7 +9041,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -9259,7 +9072,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -9272,11 +9084,7 @@
 				],
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/RunReportBottleLabelPack')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_RunReportBottleLabelPack')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Run')]",
@@ -9413,15 +9221,13 @@
 						"inputs": [
 							{
 								"referenceName": "Run",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "WWSQL003_Run",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -9474,7 +9280,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -9506,7 +9311,6 @@
 						"typeProperties": {
 							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
 							"method": "POST",
-							"headers": {},
 							"body": {
 								"DataFactoryName": "@{pipeline().DataFactory}",
 								"PipelineName": "@{pipeline().Pipeline}",
@@ -9518,3258 +9322,6 @@
 					}
 				],
 				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Run')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_Run')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BOM')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_billofmaterials"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BottleBatchRejects')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_bottlebatchrejects"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BottleBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_bottlebatchsummary"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ClosureBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_closurebatchsummary"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/FillerOperation')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_filleroperation"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HourlyLabellingLogsheet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_hourlylabellinglogsheet"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HourlyOperatorBottling')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operatorbottlinghourly"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HourlyTorqueandVolume')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_hourlytorqueandvolume"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LabelChange')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_labelchange"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LabellingIssues')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_labellingissues"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LabellingPreflight')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_labellingpreflight"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Operator')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operator"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OperatorBottlingBreakage')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operatorbottlingbreakage"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OperatorBottlingDowntime')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operatorbottlingdowntime"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/OperatorBottlingPreflight')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_operatorbottling"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PreBottlingAnalysis')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysis"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PreBottlingAnalysisRecheck')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysisrecheck"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisGasAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysisgasadjustments"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisSulphurAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysissulphuradj"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Run')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_run"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/RunReportBottleLabelPack')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_runreportbottlelabelpack"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003LabellingPreflight')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Labelling Preflight"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_BOM')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Bill of Material",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "BOM ID",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Work Order ID",
-						"type": "int",
-						"precision": 10
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Bill of Materials"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchRejects')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Bottle Batch Rejects"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Bottle Batch Summary"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_ClosureBatchSummary')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Box Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Closure Batch Code",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure Batch Summary",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Closure Batch Summary Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure ILS",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Comments",
-						"type": "text"
-					},
-					{
-						"name": "Cork Expiry Date",
-						"type": "date"
-					},
-					{
-						"name": "Cork Moisture",
-						"type": "decimal",
-						"precision": 18,
-						"scale": 0
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "OperatorCode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Production Date",
-						"type": "date"
-					},
-					{
-						"name": "Record Created On",
-						"type": "date"
-					},
-					{
-						"name": "Reference Number",
-						"type": "nchar"
-					},
-					{
-						"name": "Run",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Supplier",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Supplier Code",
-						"type": "nchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Closure Batch Summary"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_FillerOperation')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Filler operation ID",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Status",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Air Ram Screw Capper",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Air Ram Screw Capper Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Alcohol Sterilisation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Alcohol Sterilisation Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "All Filters Present",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottle Code and Guide Rails Set",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottle Coder Running and Legible",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Brand",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Brand Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CCP1 Start the Run Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CCP1 Start the Run Check Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Closure Hopper Empty",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure Hopper Empty Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure Type",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Closure Type Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Code Height",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Colour",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Colour Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Contact points for glass frag",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Grade/Size",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Grade/Size Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Corker Headspace Pressure",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Corker Plungers Set",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Corker Vacuum on",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Correct Filters",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Correct wine is bottled sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Count Zeroed",
-						"type": "nvarchar"
-					},
-					{
-						"name": "CreatedOn",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Do not start run until CCP1 is complete",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Do not start run until CCP1 is complete Time",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Docket & Vessel",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Docket & Vessel Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "End of Run Comments",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Bottle Count",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "EOR Bottle Number",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Bottling To",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Check Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "EOR Flow Meter Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "EOR Glass Fragments Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "EOR In Bottle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Rinse head inspection",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Rinse head medium",
-						"type": "nvarchar"
-					},
-					{
-						"name": "EOR Rinser Gas/Water Supply Line1",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "EOR Rinser Gas/Water Supply Line2",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "EOR Rinser Pressure Fluctuations",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Fill Heights",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Filler Centring Bells/Seals Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Filler Fill Stems Sterile",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Filler Operation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Filler Vacuum On",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Filtration Charges",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Flies in the filler room",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Flies in the filler room_old",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Flies sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Glass Bottle Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Glass Frag",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Glass Frag Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Glass pump check sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ILS Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ILSCode",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Inert Gas to Filler Bowl",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Inert Gas to Rinser",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Inert Gas to Tanker",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Is this an Organic product",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Jaw Lube Checked",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Jaw Lube Checked Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Manual Jog 1x Bottle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "MF Integrity Verification Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Number on tag(s) Filters",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Number on tag(s) Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Plain / Printed",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Plain/Printed Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Product line check sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Refract BTL",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Refract Tank",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rinser Medium",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rinser Medium Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rollers Lubed",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Run",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Sample Attached to Spec Sheet",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Spec sheet read and signed sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization Filter Integrity Verification Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization Finish",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Sterilization Membrane Integrity",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization Process",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization process Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization RF Integrity Verification Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization Rinser Integrity",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Sterilization Run End",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Sterilization Run Start",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Sterilization Start",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Sterilization Temperature",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Thread Rollers H1",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Thread Rollers H2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Thread Rollers H3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Thread Rollers H4",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Thread Rollers H5",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tuck Rollers  H5",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tuck Rollers H1",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tuck Rollers H2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tuck Rollers H3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tuck Rollers H4",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Visual Colour Match BTL",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Visual Colour Match Tank",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Wine pump (Select & Sign)",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Wine pump sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "X Ray Density Bottles",
-						"type": "nvarchar"
-					},
-					{
-						"name": "X Ray Limits Rejecting",
-						"type": "nvarchar"
-					},
-					{
-						"name": "X Ray Set On",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Filler operation"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyLabellingLogsheet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Hourly Labelling Logsheet"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyOperatorBottling')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Authorised Sig",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bill of Materials ID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottle Colour Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottle laser sticker",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle laser sticker sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottle Number as Per Laser Coder",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle Rub Mark",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle Shape Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottling from",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bottling to",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bowl Vacuum",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Check docket and physically check wine is run",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Collect Export Samples",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Corker Vacuum",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Corker Vacuum -0.8 to -1.0bar",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Delete Line",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "DO2 from Bottle",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "DO2 from vessel",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Export samples picked",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Filler Head # ",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Filler Speed",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Filter Differential",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Filtration Pressure Gauge",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Final Filter",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Flow Meter Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Foreign Body / Visual Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Gas feed to corker",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Gas feed to corker 10 - 30kpa",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Gas Flow rate to Bowl (Line 2)",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Gas pressure to bottling tank",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Glass Fragments Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "In bottle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "In tank",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Laser code as per spec",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Laser code on bottle",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Lenticular Filter",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "N2 buffer vessel pressure",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Neck Check",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Pre Filter",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Prep Check 2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Prep Check 3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Prep Check Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Pump Speed",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Rinse head inspection",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rinse head medium",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rinser Gas/Water Supply Line1",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Rinser Gas/Water Supply Line2",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Rinser Pressure Fluctuations",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Rockstopper",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rockstopper Filter",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Samples Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Stock Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Temperature",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Time of Authorised Audit Check",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Time of Check - Micro Sample Taken",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "X-Ray Challenge Test",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "date"
-					},
-					{
-						"name": "Operator Bottling Hourly",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Hourly Operator Bottling"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_HourlyTorqueandVolume')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Key",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Adjustment",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Average Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Cap Colour Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cap ILS Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cap Printing Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Branding Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork ILS Code Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Insertion Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Length Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Moisture Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Cork Printing Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Delete Line",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Density",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Empty Bottle Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Fill Height 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Fill Height 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Gaping / Broken Bridges",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Gross Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Head Space Measurement Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Head Space Pressure Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Nett Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Pull Tuck Test",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Radial Movement Check Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Redraw Seal Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Rim Impression",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Screwcapper chute Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tare Weight",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Torque Break 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 10",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 6",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 7",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 8",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Break 9",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque cap 1",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 10",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 4",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 5",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 6",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 7",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 8",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque cap 9",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Torque Slip 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 10",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 6",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 7",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 8",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Torque Slip 9",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Hourly Torque and Volume",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Tanker",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Hourly Torque and Volume"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabelChange')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Bill of Material ID",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Delete Line",
-						"type": "bit"
-					},
-					{
-						"name": "Gap",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 4
-					},
-					{
-						"name": "Height",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 4
-					},
-					{
-						"name": "Labels match spec Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Lean",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 4
-					},
-					{
-						"name": "Pallet Number",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Stock Code",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Label Change",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Label Change"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_LabellingIssues')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Labelling Issue",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle Rub",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Broken bottles",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Cartons rejected",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Comments",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Damaged screwcaps",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Date Time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Delete Issue",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Delete Rejects",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Glass defects",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Issue",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Low fills",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Total Rejects",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Labelling Issues",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Labelling Issues"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_Operator')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Initials",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Operator",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Operator"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingBreakage')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Area clean",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Area retimed",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bottle Count",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Breakages",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Broken Bottles",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Colleague Sign",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Delete Line",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Disposed bottles",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Filler Op Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Glass fragments visible",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Location of break",
-						"type": "nvarchar"
-					},
-					{
-						"name": "No breakages Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Result of a crash",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Start up time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Time of break",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Type",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Operator Bottling Breakage",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Operator Bottling Breakage"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingDowntime')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bill of Materials ID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Delete Line",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Reason",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Start",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Stop",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Total Minutes",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 2
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "date"
-					},
-					{
-						"name": "Operator Bottling Downtime",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Bill of Materials",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Operator Bottling Downtime"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_OperatorBottlingPreflight')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Operator Bottling Preflight"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysis')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Pre-Bottling Analysis Summary Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ALC %",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ALC % Num",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Alcohol %",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Alcohol By Distil",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Alcohol By Distillation",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Base DO",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "CO2",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Customer Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Density",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 5
-					},
-					{
-						"name": "FI",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Initials",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Initials Check",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Notes",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pH",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Run Number",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SO2F",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "Tank Volume",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Tanker Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Temp",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "TS02",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "TS02 Num",
-						"type": "decimal",
-						"precision": 5,
-						"scale": 2
-					},
-					{
-						"name": "TSO2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Pre-Bottling Analysis",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-Bottling Analysis"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PreBottlingAnalysisRecheck')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Pre-Bottling Analysis Recheck Summary Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Tanker Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ALC %",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ALC % Num",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Base DO",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "CO2",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Customer Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Distill",
-						"type": "bit"
-					},
-					{
-						"name": "Distill #",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Extra Analysis",
-						"type": "nvarchar"
-					},
-					{
-						"name": "FSO2",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Initials",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Run Number",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Temp",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "TSO2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "TSO2 mg",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Pre-Bottling Analysis Recheck",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-Bottling Analysis Recheck"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisGasAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-bottling Analysis Gas Adjustments"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisSulphurAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "PBA  Sulphur Adjustments Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Customer Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "etxt",
-						"type": "bit"
-					},
-					{
-						"name": "Initial 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Initial 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Operator",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "PMS (g)",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "PMS Batch",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PMS Batch expiry date",
-						"type": "date"
-					},
-					{
-						"name": "Required SO2 Result",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Retest Result",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Run Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SO2 Increases PPM",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Sparge Time",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Wine Volume",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Pre-bottling Analysis Sulphur Adjustments",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-bottling Analysis Sulphur Adjustments"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_Run')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "RunNumber",
-						"type": "nvarchar"
-					},
-					{
-						"name": "RunDate",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "WorkOrderID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "WorkOrderType",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Vintage",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Variety",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ProductionLine",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Run"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_RunReportBottleLabelPack')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Bill of Materials ID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "cases 1",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases 2",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases 3",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases 4",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases 5",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases total 1",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases total 2",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases total 3",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases total 4",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "cases total 5",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Internal Notes",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Operator Code",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Pallets / Bins 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pallets / bins 2",
-						"type": "nvarchar"
-					},
-					{
-						"name": "pallets / bins 3",
-						"type": "nvarchar"
-					},
-					{
-						"name": "pallets / bins 4",
-						"type": "nvarchar"
-					},
-					{
-						"name": "pallets / bins 5",
-						"type": "nvarchar"
-					},
-					{
-						"name": "pallets / bins each containing 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pallets / bins each containing 3",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pallets / bins each containing 4",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "pallets / bins each containing 5",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Plus Cases dispatched off line",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Production Notes",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Run Completed",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Run Report Sig",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Total Cases Produced",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Total Cases To Warehouse",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Run Report - Bottle/Label/Pack",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Run Report - Bottle/Label/Pack"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DataVerse')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "CommonDataServiceForApps",
-				"typeProperties": {
-					"deploymentType": "Online",
-					"serviceUri": "https://wineworks.crm6.dynamics.com/",
-					"authenticationType": "Office365",
-					"username": "[parameters('DataVerse_properties_typeProperties_username')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('DataVerse_password')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/FileServer1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "FileServer",
-				"typeProperties": {
-					"host": "[parameters('FileServer1_properties_typeProperties_host')]",
-					"userId": "[parameters('FileServer1_properties_typeProperties_userId')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('FileServer1_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('WWSQL003_connectionString')]",
-					"userName": "[parameters('WWSQL003_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('WWSQL003_password')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "integrationRuntime1",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/integrationRuntime1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Every Hour')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Stopped",
-				"pipelines": [],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Hour",
-						"interval": 1,
-						"startTime": "2021-03-25T12:31:00",
-						"timeZone": "New Zealand Standard Time"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
 			},
 			"dependsOn": []
 		}
