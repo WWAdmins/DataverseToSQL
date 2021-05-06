@@ -7641,16 +7641,6 @@
 									},
 									{
 										"source": {
-											"name": "ww_alcbydistil",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Alcohol By Distil",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
 											"name": "ww_alcoholbydistillation",
 											"type": "String"
 										},
@@ -7896,6 +7886,16 @@
 										},
 										"sink": {
 											"name": "Pre-Bottling Analysis",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_run",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
 											"type": "Guid"
 										}
 									}
