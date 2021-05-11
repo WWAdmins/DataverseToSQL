@@ -95,6 +95,16 @@
 									},
 									{
 										"source": {
+											"name": "ww_bomstockcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "BOM Stockcode",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_bomworkorderid",
 											"type": "Int32"
 										},
