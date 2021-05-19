@@ -117,6 +117,12 @@
 					"referenceName": "PrebottlingAnalysisGasAdjustments",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Run",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
