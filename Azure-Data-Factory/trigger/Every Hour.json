@@ -45,6 +45,12 @@
 					"referenceName": "Hourly Operator Bottling",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Hourly Torque and Volume",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
