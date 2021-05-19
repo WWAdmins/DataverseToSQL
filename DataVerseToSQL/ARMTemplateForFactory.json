@@ -12760,18 +12760,188 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "BOM",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Bottle Batch Rejects",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Bottle Batch Summary",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Closure Batch Summary",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Filler Operation",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Hourly Labelling Logsheet",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Hourly Operator Bottling",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Hourly Torque and Volume",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Label Change",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Labelling Issues",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Labelling Preflight",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Operator",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Operator Bottling Breakage",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Operator Bottling Downtime",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Operator Bottling Preflight",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Pre-bottling Analysis Sulphur Adjustments",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Pre-Bottling Analysis",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Pre-Bottling Analysis Recheck",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PrebottlingAnalysisGasAdjustments",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Run",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Run Report - BottleLabelPack",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 1,
+						"interval": 2,
 						"startTime": "2021-03-25T12:31:00",
 						"timeZone": "New Zealand Standard Time"
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/BOM')]",
+				"[concat(variables('factoryId'), '/pipelines/Bottle Batch Rejects')]",
+				"[concat(variables('factoryId'), '/pipelines/Bottle Batch Summary')]",
+				"[concat(variables('factoryId'), '/pipelines/Closure Batch Summary')]",
+				"[concat(variables('factoryId'), '/pipelines/Filler Operation')]",
+				"[concat(variables('factoryId'), '/pipelines/Hourly Labelling Logsheet')]",
+				"[concat(variables('factoryId'), '/pipelines/Hourly Operator Bottling')]",
+				"[concat(variables('factoryId'), '/pipelines/Hourly Torque and Volume')]",
+				"[concat(variables('factoryId'), '/pipelines/Label Change')]",
+				"[concat(variables('factoryId'), '/pipelines/Labelling Issues')]",
+				"[concat(variables('factoryId'), '/pipelines/Labelling Preflight')]",
+				"[concat(variables('factoryId'), '/pipelines/Operator')]",
+				"[concat(variables('factoryId'), '/pipelines/Operator Bottling Breakage')]",
+				"[concat(variables('factoryId'), '/pipelines/Operator Bottling Downtime')]",
+				"[concat(variables('factoryId'), '/pipelines/Operator Bottling Preflight')]",
+				"[concat(variables('factoryId'), '/pipelines/Pre-bottling Analysis Sulphur Adjustments')]",
+				"[concat(variables('factoryId'), '/pipelines/Pre-Bottling Analysis')]",
+				"[concat(variables('factoryId'), '/pipelines/Pre-Bottling Analysis Recheck')]",
+				"[concat(variables('factoryId'), '/pipelines/PrebottlingAnalysisGasAdjustments')]",
+				"[concat(variables('factoryId'), '/pipelines/Run')]",
+				"[concat(variables('factoryId'), '/pipelines/Run Report - BottleLabelPack')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/integrationRuntime1')]",
