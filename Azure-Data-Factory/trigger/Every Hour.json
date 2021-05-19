@@ -15,6 +15,12 @@
 					"referenceName": "Bottle Batch Rejects",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Bottle Batch Summary",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
