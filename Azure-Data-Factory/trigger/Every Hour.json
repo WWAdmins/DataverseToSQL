@@ -93,6 +93,12 @@
 					"referenceName": "Operator Bottling Preflight",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Pre-bottling Analysis Sulphur Adjustments",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
