@@ -111,6 +111,12 @@
 					"referenceName": "Pre-Bottling Analysis Recheck",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PrebottlingAnalysisGasAdjustments",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
