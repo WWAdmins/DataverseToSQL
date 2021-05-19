@@ -87,6 +87,12 @@
 					"referenceName": "Operator Bottling Downtime",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Operator Bottling Preflight",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
