@@ -39,6 +39,12 @@
 					"referenceName": "Hourly Labelling Logsheet",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Hourly Operator Bottling",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
