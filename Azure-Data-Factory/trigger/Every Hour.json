@@ -99,6 +99,12 @@
 					"referenceName": "Pre-bottling Analysis Sulphur Adjustments",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Pre-Bottling Analysis",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
