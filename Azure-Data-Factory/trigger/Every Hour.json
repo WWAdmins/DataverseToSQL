@@ -33,6 +33,12 @@
 					"referenceName": "Filler Operation",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Hourly Labelling Logsheet",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
