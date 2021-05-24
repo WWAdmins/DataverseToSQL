@@ -142,7 +142,7 @@
 								},
 								"sink": {
 									"name": "OperatorCode",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -173,6 +173,16 @@
 								"sink": {
 									"name": "Reference Number",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "crc5d_ww_billofmaterials",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Bill of Materials",
+									"type": "Guid"
 								}
 							},
 							{
