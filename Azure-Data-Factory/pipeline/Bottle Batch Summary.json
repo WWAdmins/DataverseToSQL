@@ -201,7 +201,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "sp_Bill of Materials"
+					"storedProcedureName": "[sp_Bottle Batch Summary]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
