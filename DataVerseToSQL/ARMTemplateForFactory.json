@@ -660,7 +660,7 @@
 									},
 									{
 										"source": {
-											"name": "importsequencenumber",
+											"name": "ww_importsequencenumber",
 											"type": "Int32"
 										},
 										"sink": {
@@ -716,6 +716,16 @@
 										"sink": {
 											"name": "Stock code",
 											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_timeloaded",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Time Loaded",
+											"type": "DateTime"
 										}
 									}
 								]
