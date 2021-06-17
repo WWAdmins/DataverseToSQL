@@ -27,8 +27,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "crc5d_bottlecolour",
-									"type": "String"
+									"name": "ww_billofmaterialsid",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Bill of Materials",
@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_bottlestockcode",
+									"name": "ww_bomid",
 									"type": "String"
 								},
 								"sink": {
@@ -47,8 +47,8 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_corkcolour",
-									"type": "String"
+									"name": "ww_bomstockcode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "BOM Stockcode",
@@ -57,8 +57,8 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_corklength",
-									"type": "String"
+									"name": "ww_bomworkorderid",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Work Order ID",
@@ -67,8 +67,8 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_corkprinting",
-									"type": "String"
+									"name": "createdon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Created On",
@@ -77,8 +77,8 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_corkstockcode",
-									"type": "String"
+									"name": "modifiedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Modified On",
@@ -87,8 +87,8 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_pallettype",
-									"type": "String"
+									"name": "overriddencreatedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Record Created On",
