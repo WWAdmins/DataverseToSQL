@@ -122,7 +122,7 @@
 								},
 								"sink": {
 									"name": "Distill",
-									"type": "Boolean"
+									"type": "Int32"
 								}
 							},
 							{
@@ -132,7 +132,7 @@
 								},
 								"sink": {
 									"name": "Distill #",
-									"type": "Int32"
+									"type": "Decimal"
 								}
 							},
 							{
@@ -167,12 +167,12 @@
 							},
 							{
 								"source": {
-									"name": "ww_operator",
-									"type": "String"
+									"name": "ww_operatorcode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Operator",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -262,6 +262,46 @@
 								},
 								"sink": {
 									"name": "Pre-Bottling Analysis Recheck",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_run",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Run",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tankerlookup",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Tanker",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_pbatankerlookupname",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PBA tankerlookupname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_pbatankerlookup",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "PBAtankerlookup",
 									"type": "Guid"
 								}
 							}
