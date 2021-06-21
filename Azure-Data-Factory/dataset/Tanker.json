@@ -1,5 +1,5 @@
 {
-	"name": "DataverseEntity1",
+	"name": "Tanker",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "DataVerse",
