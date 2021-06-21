@@ -77,6 +77,16 @@
 							},
 							{
 								"source": {
+									"name": "ww_alcbydistil",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Alcohol By Distil",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
 									"name": "ww_alcoholbydistillation",
 									"type": "String"
 								},
@@ -177,8 +187,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_operator",
-									"type": "String"
+									"name": "ww_operatorcode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Operator",
@@ -332,6 +342,16 @@
 								},
 								"sink": {
 									"name": "Run",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tankerlookup",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Tanker",
 									"type": "Guid"
 								}
 							}
