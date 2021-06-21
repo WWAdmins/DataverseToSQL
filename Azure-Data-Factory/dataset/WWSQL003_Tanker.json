@@ -1,0 +1,51 @@
+{
+	"name": "WWSQL003_Tanker",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TankerId",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Volume",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CreatedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ModifiedOn",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Site",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Tanker"
+		}
+	}
+}
