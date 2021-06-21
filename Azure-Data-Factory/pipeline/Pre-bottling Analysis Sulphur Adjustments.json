@@ -97,12 +97,12 @@
 							},
 							{
 								"source": {
-									"name": "ww_operator",
-									"type": "String"
+									"name": "ww_operatorcode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Operator",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
@@ -157,7 +157,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_runname",
+									"name": "modifiedonbehalfbyname",
 									"type": "String"
 								},
 								"sink": {
@@ -252,6 +252,16 @@
 								},
 								"sink": {
 									"name": "Pre-bottling Analysis Sulphur Adjustments",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tankerlookup",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Tanker",
 									"type": "Guid"
 								}
 							}
