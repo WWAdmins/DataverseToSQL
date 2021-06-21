@@ -1,0 +1,43 @@
+{
+	"name": "WWSQL003_Site",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "SiteName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SiteRunNumberPrefix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Statecode",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiteId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SiteCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Site",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Site"
+		}
+	}
+}
