@@ -301,7 +301,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Hourly Labelling Logsheet]"
+					"storedProcedureName": "[sp_Pre-bottling Analysis Sulphur Adjustments]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
