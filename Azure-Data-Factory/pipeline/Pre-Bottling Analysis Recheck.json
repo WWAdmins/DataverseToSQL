@@ -341,7 +341,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[sp_Operator Bottling Preflight]"
+					"storedProcedureName": "[sp_Pre-Bottling Analysis Recheck]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
