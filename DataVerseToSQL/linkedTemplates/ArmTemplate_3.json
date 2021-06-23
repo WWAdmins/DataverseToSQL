@@ -2264,7 +2264,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"storedProcedureName": "[[dbo].[sp_Operator Bottling Preflight]"
+							"storedProcedureName": "[[sp_Pre-Bottling Analysis Recheck]"
 						},
 						"linkedServiceName": {
 							"referenceName": "WWSQL003",
@@ -3120,7 +3120,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"storedProcedureName": "[[dbo].[sp_Hourly Labelling Logsheet]"
+							"storedProcedureName": "[[sp_Pre-bottling Analysis Sulphur Adjustments]"
 						},
 						"linkedServiceName": {
 							"referenceName": "WWSQL003",
