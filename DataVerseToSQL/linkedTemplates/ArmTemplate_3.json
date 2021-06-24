@@ -3357,12 +3357,12 @@
 									},
 									{
 										"source": {
-											"name": "ww_operator",
-											"type": "String"
+											"name": "ww_operatorcode",
+											"type": "Int32"
 										},
 										"sink": {
 											"name": "Operator",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -3452,6 +3452,26 @@
 										},
 										"sink": {
 											"name": "Pre-bottling Analysis Gas Adjustments",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_run",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankerlookup",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Tanker",
 											"type": "Guid"
 										}
 									}
