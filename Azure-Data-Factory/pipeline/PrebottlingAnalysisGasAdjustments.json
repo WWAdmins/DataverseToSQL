@@ -267,8 +267,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_tanker",
-									"type": "String"
+									"name": "ww_tankerlookup",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Tanker",
