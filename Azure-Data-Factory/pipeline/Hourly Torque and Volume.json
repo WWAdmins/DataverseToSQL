@@ -217,8 +217,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_tafillheight2",
-									"type": "Decimal"
+									"name": "ww_fillheight2",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Fill Height 2",
