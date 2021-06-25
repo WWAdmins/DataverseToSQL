@@ -217,8 +217,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_fillheight2",
-									"type": "Int32"
+									"name": "ww_tafillheight2",
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "Fill Height 2",
@@ -373,6 +373,56 @@
 								"sink": {
 									"name": "Tare Weight",
 									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tafillheight1",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TA Fill Height 1",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tafillheight2",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TA Fill Height 2",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tafillheight3",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TA Fill Height 3",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tafillheight4",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TA Fill Height 4",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tafillheight5",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "TA Fill Height 5",
+									"type": "Int32"
 								}
 							},
 							{
