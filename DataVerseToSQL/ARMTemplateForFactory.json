@@ -8273,7 +8273,7 @@
 										},
 										"sink": {
 											"name": "Operator",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -8328,7 +8328,7 @@
 									},
 									{
 										"source": {
-											"name": "modifiedonbehalfbyname",
+											"name": "ww_runname",
 											"type": "String"
 										},
 										"sink": {
@@ -8423,6 +8423,16 @@
 										},
 										"sink": {
 											"name": "Pre-bottling Analysis Sulphur Adjustments",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_run",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
 											"type": "Guid"
 										}
 									},
