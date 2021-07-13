@@ -41,7 +41,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "Bill of Material ID",
+									"name": "BOM ID",
 									"type": "String"
 								}
 							},
@@ -182,6 +182,16 @@
 								},
 								"sink": {
 									"name": "Label Change",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_billofmaterial",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Bill of Material",
 									"type": "Guid"
 								}
 							}
