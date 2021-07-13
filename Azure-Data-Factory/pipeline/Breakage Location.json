@@ -1,0 +1,97 @@
+{
+	"name": "Breakage Location",
+	"properties": {
+		"activities": [
+			{
+				"name": "Breakage Location",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "CommonDataServiceForAppsSource"
+					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "statecode",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "StateCode",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_location",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Location",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_breakagelocationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "BreakageLocation",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ModifiedOn",
+									"type": "DateTime"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "BreakageLocation",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "WWSQL003_BreakageLocation",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
