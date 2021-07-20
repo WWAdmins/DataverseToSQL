@@ -67,7 +67,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -75,42 +76,322 @@
 								"mappings": [
 									{
 										"source": {
+											"name": "ww_backlabel",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Back Label",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_backlabeladditionaltext",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Back Label Additional Text",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_backlabelheight",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Back Label Height",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_backlabelinkjetcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Back Label Inkjet Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_backlabelinkjetplacement",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Back Label Inkjet Placement",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_billofmaterialsid",
 											"type": "Guid"
 										},
 										"sink": {
-											"name": "Bill of Materials",
+											"name": "Bill of materials",
 											"type": "Guid"
 										}
 									},
 									{
 										"source": {
-											"name": "ww_bomid",
+											"name": "ww_bominstructionsforthisrun",
 											"type": "String"
 										},
 										"sink": {
-											"name": "BOM ID",
+											"name": "BOM Instructions for this Run",
 											"type": "String"
 										}
 									},
 									{
 										"source": {
-											"name": "ww_bomstockcode",
+											"name": "ww_bomspecificinstructions",
+											"type": "String"
+										},
+										"sink": {
+											"name": "BOM specific Instructions",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bomupdatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "BOM Updated On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottle",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_bottlecolour",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Colour",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlelasercode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Laser Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottles",
 											"type": "Int32"
 										},
 										"sink": {
-											"name": "BOM Stockcode",
+											"name": "Bottles",
 											"type": "Int32"
 										}
 									},
 									{
 										"source": {
-											"name": "ww_bomworkorderid",
+											"name": "ww_bottlesize",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Size",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlesperpallet",
 											"type": "Int32"
 										},
 										"sink": {
-											"name": "Work Order ID",
+											"name": "Bottles Per Pallet",
 											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_bottlestockcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Stock Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottletype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottle Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_carton",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonbottletype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Bottle Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartoninkjetplacement",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Inkjet Placement",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartoninkjettext",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Inkjet Text",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonlabel",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Label",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonsperpallet",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Cartons Per Pallet",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonvariety",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Variety",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_casestoprocess",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Cases To Process",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_closure",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Closure",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_completed",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Completed",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkcolour",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Colour",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corklength",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Length",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkprinting",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Printing",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_corkstockcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork Stockcode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cover",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cover",
+											"type": "String"
 										}
 									},
 									{
@@ -125,12 +406,192 @@
 									},
 									{
 										"source": {
+											"name": "ww_depalbottlesperpallet",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Depal Bottles Per Pallet",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_divider",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Divider",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_extradrygood1",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Extra Dry Good1",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_extradrygood2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Extra Dry Good2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_frontlabel",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Front Label",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_frontlabelheight",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Front Label Height",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_genericclientinstructions",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Generic Client Instructions",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_hardboardtopcover",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Hardboard Top Cover",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_hasformdata",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Has Form Data",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
 											"name": "modifiedon",
 											"type": "DateTime"
 										},
 										"sink": {
 											"name": "Modified On",
 											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_otherlabel",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Other Label",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_otherlabel2",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Other Label2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_otherlabel2placement",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Other Label2 Placement",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_otherlabelplacement",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Other Label Placement",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pallet",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pallets",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Pallets",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletstackingpattern",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet Stacking Pattern",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_pallettype",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet Type",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bomproductionnotes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Production Notes",
+											"type": "String"
 										}
 									},
 									{
@@ -145,12 +606,102 @@
 									},
 									{
 										"source": {
+											"name": "crc5d_screwcapcolour",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Screwcap Colour",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_screwcapprinting",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Screwcap Printing",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_screwcapstockcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Screwcap Stockcode",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bomsequence",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Sequence",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_slipsheet",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Slipsheet",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
 											"name": "statecode",
 											"type": "Int32"
 										},
 										"sink": {
 											"name": "Status",
 											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bomstockcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Stock Code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_stockcodedescription",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Stock Code Description",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bomworkorderid",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "WorkOrderId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_workorderinstructions",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Work Order Instructions",
+											"type": "String"
 										}
 									}
 								]
@@ -294,7 +845,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -582,7 +1134,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -858,6 +1411,112 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Breakage Location')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Breakage Location",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "StateCode",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_location",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Location",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_breakagelocationid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "BreakageLocation",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "CreatedOn",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ModifiedOn",
+											"type": "DateTime"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "BreakageLocation",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_BreakageLocation",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/BreakageLocation')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_BreakageLocation')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Closure Batch Summary')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -880,7 +1539,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -1228,7 +1888,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -2455,7 +3116,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -2983,7 +3645,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -3800,7 +4463,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -4717,7 +5381,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -5034,7 +5699,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -5391,7 +6057,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -5988,7 +6655,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -6385,7 +7053,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -6682,7 +7351,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -7089,7 +7759,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -7316,7 +7987,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -7743,7 +8415,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -8220,7 +8893,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -8617,7 +9291,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -9014,7 +9689,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -9521,7 +10197,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -9768,7 +10445,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -9883,7 +10561,8 @@
 								"type": "CommonDataServiceForAppsSource"
 							},
 							"sink": {
-								"type": "SqlServerSink"
+								"type": "SqlServerSink",
+								"writeBehavior": "insert"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -10131,6 +10810,26 @@
 				"schema": [],
 				"typeProperties": {
 					"entityName": "ww_bottlebatchsummary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/BreakageLocation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_breakagelocation"
 				}
 			},
 			"dependsOn": [
@@ -11143,6 +11842,53 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Bottle Batch Summary"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_BreakageLocation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "StateCode",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Location",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BreakageLocation",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "CreatedOn",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "ModifiedOn",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "BreakageLocation"
 				}
 			},
 			"dependsOn": [
@@ -14152,178 +14898,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Breakage Location')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Breakage Location",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource"
-							},
-							"sink": {
-								"type": "SqlServerSink"
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "StateCode",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_location",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Location",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_breakagelocationid",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "BreakageLocation",
-											"type": "Guid"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "CreatedOn",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "ModifiedOn",
-											"type": "DateTime"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "BreakageLocation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "WWSQL003_BreakageLocation",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/BreakageLocation')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_BreakageLocation')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_BreakageLocation')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "StateCode",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Location",
-						"type": "nvarchar"
-					},
-					{
-						"name": "BreakageLocation",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "CreatedOn",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "ModifiedOn",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "BreakageLocation"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/BreakageLocation')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_breakagelocation"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
 		}
 	]
 }

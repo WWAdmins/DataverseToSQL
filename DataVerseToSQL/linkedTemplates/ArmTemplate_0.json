@@ -111,6 +111,26 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/BreakageLocation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_breakagelocation"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ClosureBatchSummary')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -384,26 +404,6 @@
 				"schema": [],
 				"typeProperties": {
 					"entityName": "ww_prebottlinganalysisrecheck"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PrebottlingAnalysisGasAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DataVerse",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "CommonDataServiceForAppsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "ww_prebottlinganalysisgasadjustments"
 				}
 			},
 			"dependsOn": [
