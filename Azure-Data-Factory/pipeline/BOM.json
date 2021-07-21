@@ -88,6 +88,16 @@
 							},
 							{
 								"source": {
+									"name": "ww_bomid",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Id",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
 									"name": "ww_bominstructionsforthisrun",
 									"type": "String"
 								},
