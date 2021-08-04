@@ -123,6 +123,12 @@
 					"referenceName": "Run Report - BottleLabelPack",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Hourly Torque and Volume",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
