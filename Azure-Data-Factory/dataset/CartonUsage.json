@@ -1,0 +1,15 @@
+{
+	"name": "CartonUsage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataVerse",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CommonDataServiceForAppsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "ww_cartonusage"
+		}
+	}
+}
