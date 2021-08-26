@@ -740,7 +740,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Hour",
-						"interval": 1,
+						"interval": 6,
 						"startTime": "2021-03-25T12:31:00",
 						"timeZone": "New Zealand Standard Time"
 					}
