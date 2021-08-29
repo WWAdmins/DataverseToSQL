@@ -8385,6 +8385,16 @@
 											"name": "Bill of Materials",
 											"type": "Guid"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_breakagelocation",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Breakage Location",
+											"type": "Guid"
+										}
 									}
 								]
 							}
