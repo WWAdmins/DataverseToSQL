@@ -113,8 +113,8 @@
 									},
 									{
 										"source": {
-											"name": "ww_runproductionlinename",
-											"type": "String"
+											"name": "ww_runproductionline",
+											"type": "Guid"
 										},
 										"sink": {
 											"name": "ProductionLine",
@@ -251,6 +251,10 @@
 						}
 					}
 				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -363,6 +367,10 @@
 						]
 					}
 				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -576,6 +584,10 @@
 						}
 					}
 				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
 				"annotations": []
 			},
 			"dependsOn": []
