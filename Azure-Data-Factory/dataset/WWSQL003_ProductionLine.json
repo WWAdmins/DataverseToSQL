@@ -1,0 +1,48 @@
+{
+	"name": "WWSQL003_ProductionLine",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "RunNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "RunDate",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "WorkOrderID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "WorkOrderType",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Vintage",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Variety",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ProductionLine",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ProductionLine"
+		}
+	}
+}
