@@ -27,7 +27,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ww_productionlineid",
+									"name": "ww_productionlinelookupid",
 									"type": "Guid"
 								},
 								"sink": {
@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_productionlineid",
+									"name": "ww_productionlineid",
 									"type": "Int32"
 								},
 								"sink": {
@@ -47,7 +47,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_productionlinename",
+									"name": "ww_productionlineshortname",
 									"type": "String"
 								},
 								"sink": {
