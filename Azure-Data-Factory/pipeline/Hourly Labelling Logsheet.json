@@ -147,8 +147,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfby",
-									"type": "Guid"
+									"name": "ww_bottleandcapscleansig",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Bottle and Caps Clean",
@@ -157,8 +157,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfbyname",
-									"type": "String"
+									"name": "ww_cartonclosurelessthan10mm",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Carton closure less than 10mm",
@@ -167,8 +167,8 @@
 							},
 							{
 								"source": {
-									"name": "modifiedonbehalfbyyominame",
-									"type": "String"
+									"name": "ww_cartonfibretear",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Carton fibre tear",
