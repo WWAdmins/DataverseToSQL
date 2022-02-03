@@ -3626,7 +3626,7 @@
 									},
 									{
 										"source": {
-											"name": "statecode",
+											"name": "statuscode",
 											"type": "Int32"
 										},
 										"sink": {
@@ -3956,16 +3956,6 @@
 									},
 									{
 										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Record Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
 											"name": "ww_hourlylabellinglogsheetid",
 											"type": "Guid"
 										},
@@ -4089,7 +4079,7 @@
 								"PipelineName": "@{pipeline().Pipeline}",
 								"Subject": "An error has occurred!",
 								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
-								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+								"EmailTo": "suchetha.jangili@wineworks.co.nz"
 							}
 						}
 					}
