@@ -47,7 +47,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -147,8 +147,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottleandcapscleansig",
-									"type": "String"
+									"name": "modifiedonbehalfby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Bottle and Caps Clean",
@@ -157,8 +157,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_cartonclosurelessthan10mm",
-									"type": "Int32"
+									"name": "modifiedonbehalfbyname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Carton closure less than 10mm",
@@ -167,8 +167,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_cartonfibretear",
-									"type": "Int32"
+									"name": "modifiedonbehalfbyyominame",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Carton fibre tear",
@@ -372,16 +372,6 @@
 								},
 								"sink": {
 									"name": "Modified On",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "overriddencreatedon",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "Record Created On",
 									"type": "DateTime"
 								}
 							},
