@@ -1926,7 +1926,7 @@
 						"PipelineName": "@{pipeline().Pipeline}",
 						"Subject": "An error has occurred!",
 						"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
-						"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+						"EmailTo": "itteam@wineworks.co.nz"
 					}
 				}
 			},
@@ -1957,7 +1957,7 @@
 						"PipelineName": "@{pipeline().Pipeline}",
 						"Subject": "An error has occurred!",
 						"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
-						"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+						"EmailTo": "itteam@wineworks.co.nz"
 					}
 				}
 			}
