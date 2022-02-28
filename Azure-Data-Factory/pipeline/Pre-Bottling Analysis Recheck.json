@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -123,6 +123,16 @@
 								"sink": {
 									"name": "Distill",
 									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedbyyominame",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Distill Name",
+									"type": "String"
 								}
 							},
 							{
@@ -247,12 +257,12 @@
 							},
 							{
 								"source": {
-									"name": "overriddencreatedon",
-									"type": "DateTime"
+									"name": "ww_deleteline",
+									"type": "Boolean"
 								},
 								"sink": {
-									"name": "Record Created On",
-									"type": "DateTime"
+									"name": "DeletedLine",
+									"type": "Boolean"
 								}
 							},
 							{
