@@ -1219,7 +1219,7 @@
 									},
 									{
 										"source": {
-											"name": "overriddencreatedon",
+											"name": "createdon",
 											"type": "DateTime"
 										},
 										"sink": {
@@ -1279,7 +1279,7 @@
 									},
 									{
 										"source": {
-											"name": "createdon",
+											"name": "overriddencreatedon",
 											"type": "DateTime"
 										},
 										"sink": {
@@ -1305,6 +1305,16 @@
 										"sink": {
 											"name": "Time Loaded",
 											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
 										}
 									}
 								]
