@@ -224,6 +224,36 @@
 									"name": "Supplier Code",
 									"type": "String"
 								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_ordernumber",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Order number",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_closureowner",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Closure Owner",
+									"type": "String"
+								}
 							}
 						]
 					}
