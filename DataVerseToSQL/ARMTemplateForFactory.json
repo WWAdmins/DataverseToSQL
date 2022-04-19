@@ -1316,6 +1316,16 @@
 											"name": "ProductionLineId",
 											"type": "Int32"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_moldid",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Mold Id",
+											"type": "String"
+										}
 									}
 								]
 							}
