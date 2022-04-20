@@ -1408,16 +1408,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_beltlubecompletedsig",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Rollers Lubed",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_rinsergassupplyco2",
 									"type": "Decimal"
 								},
