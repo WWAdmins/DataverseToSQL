@@ -1888,8 +1888,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_eorinbottle",
-									"type": "Int32"
+									"name": "ww_bottlingfrom",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "EOR Bottling From",
