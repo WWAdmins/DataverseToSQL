@@ -242,7 +242,7 @@
 								},
 								"sink": {
 									"name": "Order number",
-									"type": "Int32"
+									"type": "String"
 								}
 							},
 							{
