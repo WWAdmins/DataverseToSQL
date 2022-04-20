@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -63,6 +63,16 @@
 								"sink": {
 									"name": "Adjustment",
 									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_adjustmenthasbeenmadesig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Adjustment has been made sig",
+									"type": "String"
 								}
 							},
 							{
@@ -937,8 +947,8 @@
 							},
 							{
 								"source": {
-									"name": "overriddencreatedon",
-									"type": "DateTime"
+									"name": "ww_tankername",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Record Created On",
@@ -973,6 +983,56 @@
 								"sink": {
 									"name": "Tanker",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_pulltucktestchecked",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Pull tuck test checked Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_screwcapperchutecheckedsig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Screwcapper chute checked Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_stockcodecheckedsig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Stock Code Checked Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_visualsealonbottle",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Visual seal on bottle",
+									"type": "String"
 								}
 							}
 						]
