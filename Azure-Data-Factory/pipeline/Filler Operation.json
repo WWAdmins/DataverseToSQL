@@ -38,7 +38,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -358,7 +358,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_corkerbellscorrectsizesig",
+									"name": "crc5d_corkerheadspacepressure",
 									"type": "String"
 								},
 								"sink": {
@@ -903,7 +903,7 @@
 								},
 								"sink": {
 									"name": "Flies in the filler room",
-									"type": "String"
+									"type": "Int32"
 								}
 							},
 							{
@@ -913,7 +913,7 @@
 								},
 								"sink": {
 									"name": "Flies in the filler room_old",
-									"type": "Int32"
+									"type": "Boolean"
 								}
 							},
 							{
@@ -1068,7 +1068,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_inertgastorinseronsig",
+									"name": "crc5d_inertgastorinser",
 									"type": "String"
 								},
 								"sink": {
@@ -1348,7 +1348,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_productionrunstart",
+									"name": "ww_ccp1starttherunchecktime",
 									"type": "DateTime"
 								},
 								"sink": {
@@ -1403,6 +1403,16 @@
 								},
 								"sink": {
 									"name": "Rinser water on Sig",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_beltlubecompletedsig",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Rollers Lubed",
 									"type": "String"
 								}
 							},
@@ -1574,6 +1584,26 @@
 								"sink": {
 									"name": "Sterilization Rinser Integrity",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_sterilizationfinish",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Sterilization Run End",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionrunstart",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "Sterilization Run Start",
+									"type": "DateTime"
 								}
 							},
 							{
@@ -1828,6 +1858,16 @@
 							},
 							{
 								"source": {
+									"name": "ww_filleroperationid",
+									"type": "Guid"
+								},
+								"sink": {
+									"name": "Filler operation2",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
 									"name": "ww_winemakersignatureid",
 									"type": "Guid"
 								},
@@ -1848,12 +1888,210 @@
 							},
 							{
 								"source": {
+									"name": "ww_eorinbottle",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "EOR Bottling From",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
 									"name": "modifiedon",
 									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Modified On",
 									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_mlbowlstarttime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ML Bowl Start Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_mlbowlfinishtime",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ML Bowl Finish Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_mlbowltemp",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ML Bowl Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_mlfillertipstemp",
+									"type": "Decimal"
+								},
+								"sink": {
+									"name": "ML Filler Tips Finish Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Filler Tips Start Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Filler Tips Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Filters Finish Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Filters Start Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Filters Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Filters Finish Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Filters Start Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Filters Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Finish Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Start Time",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "ML Rinser Temp",
+									"type": "Decimal"
+								}
+							},
+							{
+								"sink": {
+									"name": "Notice Required",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Production Line",
+									"type": "Int32"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Date and batch of bottle",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Date current bottle opened",
+									"type": "DateTime"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Heating on sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin No alarms showing sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Production mode off sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Production mode on sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin Sterilization completed sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin System drained sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Velcorin unit lines Sig",
+									"type": "String"
+								}
+							},
+							{
+								"sink": {
+									"name": "Wine signed off Sig",
+									"type": "String"
 								}
 							}
 						]
