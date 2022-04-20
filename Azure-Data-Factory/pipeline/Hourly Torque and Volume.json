@@ -1017,16 +1017,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_stockcodecheckedsig",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Stock Code Checked Sig",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_visualsealonbottle",
 									"type": "String"
 								},
