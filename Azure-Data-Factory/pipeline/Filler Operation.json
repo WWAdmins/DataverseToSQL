@@ -1578,26 +1578,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_sterilizationfinish",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "Sterilization Run End",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_productionrunstart",
-									"type": "DateTime"
-								},
-								"sink": {
-									"name": "Sterilization Run Start",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_sterilizationstart",
 									"type": "DateTime"
 								},
