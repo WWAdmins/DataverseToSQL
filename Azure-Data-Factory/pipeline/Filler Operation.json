@@ -1998,7 +1998,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_mlrinserfiltersfinishtime",
+									"name": "ww_mlrinserfinishtime",
 									"type": "DateTime"
 								},
 								"sink": {
@@ -2018,7 +2018,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_mlrinserfilterstemp",
+									"name": "ww_mlrinsertemp",
 									"type": "Decimal"
 								},
 								"sink": {
@@ -2034,16 +2034,6 @@
 								"sink": {
 									"name": "Notice Required",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_productionline",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "Production Line",
-									"type": "Int32"
 								}
 							},
 							{
