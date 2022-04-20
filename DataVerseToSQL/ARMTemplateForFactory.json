@@ -2535,7 +2535,7 @@
 									},
 									{
 										"source": {
-											"name": "statecode",
+											"name": "statuscode",
 											"type": "Int32"
 										},
 										"sink": {
@@ -3400,7 +3400,7 @@
 										},
 										"sink": {
 											"name": "Flies in the filler room",
-											"type": "String"
+											"type": "Int32"
 										}
 									},
 									{
@@ -3410,7 +3410,7 @@
 										},
 										"sink": {
 											"name": "Flies in the filler room_old",
-											"type": "Int32"
+											"type": "Boolean"
 										}
 									},
 									{
@@ -4335,11 +4335,21 @@
 									},
 									{
 										"source": {
-											"name": "ww_bottlingfrom",
+											"name": "ww_tankerlookup",
 											"type": "Guid"
 										},
 										"sink": {
 											"name": "Bottling From Lookup",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlingfrom",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "EOR Bottling From",
 											"type": "Guid"
 										}
 									},
@@ -4351,6 +4361,276 @@
 										"sink": {
 											"name": "Modified On",
 											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlbowlstarttime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Bowl Start Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlbowlfinishtime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Bowl Finish Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlbowltemp",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "ML Bowl Temp",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfillertipsfinishtime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Filler Tips Finish Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfillertipsstarttime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Filler Tips Start Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfillertipstemp",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "ML Filler Tips Temp",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfiltersfinishtime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Filters Finish Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfiltersstarttime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Filters Start Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlfilterstemp",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "ML Filters Temp",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinserfiltersfinishtime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Rinser Filters Finish Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinserfiltersstarttime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Rinser Filters Start Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinserfilterstemp",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "ML Rinser Filters Temp",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinserfinishtime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Rinser Finish Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinserstarttime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ML Rinser Start Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_mlrinsertemp",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "ML Rinser Temp",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_noticerequired",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Notice Required",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorindateandbatchofbottle",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin Date and batch of bottle",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorindatecurrentbottleopened",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Velcorin Date current bottle opened",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinheatingonsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin Heating on sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinnoalarmsshowingsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin No alarms showing sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinproductionmodeoffsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin Production mode off sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinproductionmodeonsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin Production mode on sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinsterilizationcompletedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin Sterilization completed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinsystemdrainedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin System drained sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinunitlinessig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin unit lines Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_winesignedoffsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Wine signed off Sig",
+											"type": "String"
 										}
 									}
 								]
