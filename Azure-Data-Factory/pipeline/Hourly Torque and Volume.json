@@ -947,8 +947,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_tankername",
-									"type": "String"
+									"name": "overriddencreatedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Record Created On",
