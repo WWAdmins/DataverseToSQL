@@ -358,7 +358,7 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_corkerheadspacepressure",
+									"name": "ww_corkerbellscorrectsizesig",
 									"type": "String"
 								},
 								"sink": {
@@ -1068,7 +1068,7 @@
 							},
 							{
 								"source": {
-									"name": "crc5d_inertgastorinser",
+									"name": "ww_inertgastorinseronsig",
 									"type": "String"
 								},
 								"sink": {
@@ -1868,7 +1868,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_bottlingfrom",
+									"name": "ww_tankerlookup",
 									"type": "Guid"
 								},
 								"sink": {
