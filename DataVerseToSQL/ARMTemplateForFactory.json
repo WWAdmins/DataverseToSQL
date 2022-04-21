@@ -12301,7 +12301,7 @@
 									},
 									{
 										"source": {
-											"name": "statecode",
+											"name": "statuscode",
 											"type": "Int32"
 										},
 										"sink": {
@@ -12537,6 +12537,96 @@
 										"sink": {
 											"name": "Tanker",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_co2",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "CO2",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_co2gasused",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "CO2 Gas Used",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_co2resultrequired",
+											"type": "String"
+										},
+										"sink": {
+											"name": "CO2 Result Required",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_do",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "DO",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_doadjustmenton",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "DO Adjustment On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_doadjustmentoff",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "DO Adjustment Off",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_dogasused",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "DO Gas Used",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankerlookuptext",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tanker Lookup Text",
+											"type": "String"
 										}
 									}
 								]
