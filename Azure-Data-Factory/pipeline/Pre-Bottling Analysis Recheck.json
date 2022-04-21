@@ -97,8 +97,8 @@
 							},
 							{
 								"source": {
-									"name": "importsequencenumber",
-									"type": "Int32"
+									"name": "ww_customertankname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Customer Tank Name",
@@ -123,16 +123,6 @@
 								"sink": {
 									"name": "Distill",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedbyyominame",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Distill Name",
-									"type": "String"
 								}
 							},
 							{
@@ -337,7 +327,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_pbatankerlookupname",
+									"name": "ww_tankerlookuptext",
 									"type": "String"
 								},
 								"sink": {
