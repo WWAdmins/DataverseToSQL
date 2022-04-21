@@ -10147,16 +10147,6 @@
 									},
 									{
 										"source": {
-											"name": "modifiedbyyominame",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Distill Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
 											"name": "ww_distillnum",
 											"type": "Decimal"
 										},
@@ -10277,12 +10267,12 @@
 									},
 									{
 										"source": {
-											"name": "ww_deleteline",
-											"type": "Boolean"
+											"name": "overriddencreatedon",
+											"type": "DateTime"
 										},
 										"sink": {
-											"name": "DeletedLine",
-											"type": "Boolean"
+											"name": "Record Created On",
+											"type": "DateTime"
 										}
 									},
 									{
@@ -10333,6 +10323,36 @@
 										"sink": {
 											"name": "PBAtankerlookup",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "DeletedLine",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankerlookuptext",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tanker Lookup Text",
+											"type": "String"
 										}
 									}
 								]
