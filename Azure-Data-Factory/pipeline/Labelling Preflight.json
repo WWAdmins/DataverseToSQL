@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -473,6 +473,296 @@
 								"sink": {
 									"name": "Bill of Materials",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartonlabelinstruction",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bill of Materials Instructions for this run",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_billofmaterialsspecificinstructions",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Bill of Materials Specific Instructions",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bom3rdlabel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM 3rd Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bom3rdlabelposition",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM 3rd Label Position",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bom4thlabel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM 4th Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bom4thlabelposition",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM 4th Label Position",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bombacklabel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Back Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bombacklabelheight",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Back Label Height",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bombacklabelinkjetcode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Back Label Inkjet Code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartoncode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Carton Code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartoninkjet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Carton Inkjet",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartoninkjetplacement",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Carton Inkjet Placement",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartonlabelinstruction",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Carton Label Instruction",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomcartonlabeltype",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Carton Label Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomextraitem",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Extra Item",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomextraitem2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Extra Item 2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomfrontlabel",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Front Label",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomfrontlabelheight",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Front Label Height",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomgenericinstruction",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Generic Client Instruction",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomlabeladditionaltext",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Label Additional Text",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomlabelinkjetplacement",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Label Inkjet Placement",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bompalletstackingpattern",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Pallet Stacking Pattern",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomslipsheet",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Slip Sheet",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_bomworkorderinstructions",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BOM Work Order Instructions",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_dividersscissorscheck",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Dividers scissors check",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "production line",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_uv",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "UV",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_varietyvintage",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Variety Vintage",
+									"type": "String"
 								}
 							}
 						]
