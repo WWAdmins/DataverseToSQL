@@ -4664,7 +4664,7 @@
 									},
 									{
 										"source": {
-											"name": "statecode",
+											"name": "statuscode",
 											"type": "Int32"
 										},
 										"sink": {
@@ -4884,6 +4884,26 @@
 									},
 									{
 										"source": {
+											"name": "ww_fillerbowltemperature",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Filler Bowl Temperature",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerbowlpressure",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Filler Bowl Pressure",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_fillerhead",
 											"type": "Decimal"
 										},
@@ -4930,6 +4950,16 @@
 										"sink": {
 											"name": "Final Filter",
 											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillertemperature40c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Filler Temperature <4.0°C",
+											"type": "Boolean"
 										}
 									},
 									{
@@ -5054,6 +5084,16 @@
 									},
 									{
 										"source": {
+											"name": "ww_litmuspapertestinproduct",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Litmus paper test in product",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_n2buffervesselpressure",
 											"type": "Int32"
 										},
@@ -5154,6 +5194,26 @@
 									},
 									{
 										"source": {
+											"name": "ww_rinsergassupplyco2",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser Gas Supply (CO2)",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserwatersupply",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser Water Supply",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_rinsergaswatersupplyline1",
 											"type": "Decimal"
 										},
@@ -5214,12 +5274,42 @@
 									},
 									{
 										"source": {
+											"name": "ww_screencheckfordoserate",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Screen check for dose rate",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sparkling",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Sparkling",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_stockcodesig",
 											"type": "String"
 										},
 										"sink": {
 											"name": "Stock Code Sig",
 											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankpressure",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Tank Pressure",
+											"type": "Decimal"
 										}
 									},
 									{
@@ -5250,6 +5340,36 @@
 										"sink": {
 											"name": "Time of Check - Micro Sample Taken",
 											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_venttubecount",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Vent Tube Count",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_winetemperatureinternalprobe40c",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Wine Temp (internal probe)<4.0°C",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_warmingtunnelrunningtemperature",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Warming tunnel running temperature",
+											"type": "Decimal"
 										}
 									},
 									{
@@ -5320,6 +5440,396 @@
 										"sink": {
 											"name": "Bill of Materials",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bardifferential",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "<1.5 bar differential",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_autolevelmanometer",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Autolevel manometer",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlevacuum",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Bottle vacuum",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlevacuumaccordingtorecipe",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Bottle vacuum according to recipe",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bowlmn2pressure",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Bowl mN2 pressure",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bucketsflowedintime",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Buckets flowed in time",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_capdetectoronsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cap detector on Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_chippednecks",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Chipped necks",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_co2",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "CO2",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_counterpressureinlet",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Counter pressure inlet",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_counterpressureoutlet",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Counter pressure outlet",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deoxn2pressre",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Deox N2 pressure",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deoxvacuumpressure",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Deox vacuum pressure",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillertipsealsvisualchecksig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler tip seals visual check sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillheightdetectoronsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Fill height detector on Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_foreignmattersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Foreign matter Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gasblowonbottle",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gas blow on bottle",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gascoveronbowl",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gas cover on bowl",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_gasflowtocap",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Gas flow to cap",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Pallet number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pittingsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pitting sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pumpnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Pump number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsejetcoveragesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinse jet coverage Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserbottlegripperclearancesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser bottle gripper clearance sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsergaswatersupply",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser gas water supply",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsern2pressure",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinser N2 pressure",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsertipsvisualchecksig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser tips visual check sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsewater045mprefilter",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinse water 0.45 µm pre-filter",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsewater12mprefilter",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Rinse water 1.2 µm pre-filter",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_selflevelling",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Self levelling",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankchangeflowedintimesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "tank change flowed in time sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankjointscheckedfornleakssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tank joints checked for nleaks sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tkinjectionmanometer",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "TK injection manometer",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinalarmssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin alarms sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorinchangebottlelightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Velcorin change bottle light sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorindosingrate",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Velcorin Dosing rate",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_velcorntime",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Velcorn Time",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_winetempinternalprobe",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Wine Temp (internal probe)",
+											"type": "Decimal"
 										}
 									}
 								]
