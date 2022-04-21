@@ -77,8 +77,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_fourthlabelheightposition",
-									"type": "String"
+									"name": "ww_thlabel",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "4th Label",
