@@ -487,16 +487,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_bomcartonlabelinstruction",
-									"type": "String"
-								},
-								"sink": {
-									"name": "Bill of Materials Instructions for this run",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_billofmaterialsspecificinstructions",
 									"type": "String"
 								},
@@ -733,16 +723,6 @@
 								"sink": {
 									"name": "Dividers scissors check",
 									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_productionline",
-									"type": "Int32"
-								},
-								"sink": {
-									"name": "production line",
-									"type": "Int32"
 								}
 							},
 							{
