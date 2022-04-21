@@ -4286,6 +4286,16 @@
 									},
 									{
 										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_hourlylabellinglogsheetid",
 											"type": "Guid"
 										},
@@ -4302,6 +4312,196 @@
 										"sink": {
 											"name": "Bill of Materials",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alchoholna",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Alchohol N/A",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_barcodena",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Barcode N/A",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartoncountry",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton country",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartoneanplacementsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton EAN placement Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonlotcode",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton lot code",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonrunnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Run number",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_caronvarietyvintage",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Carton Variety vintage",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cartonweightrange",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Carton Weight range",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labelalcoholfrontbackcheckedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Label Alcohol front/back checked Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_barcodecheckdigit",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Label Barcode check digit",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labelnationalityfrontbackcorrectsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Label Nationality front back correct Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_labelvarietyvintagecheckedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Label Variety Vintage Checked Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletnumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Pallet number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletstackingpattern",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet stacking pattern",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletstackingpatternmatchessig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet stacking pattern matches Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletsticker",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Pallet sticker",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_palletstidysig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallets tidy Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pallettypesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pallet Type",
+											"type": "String"
 										}
 									}
 								]
