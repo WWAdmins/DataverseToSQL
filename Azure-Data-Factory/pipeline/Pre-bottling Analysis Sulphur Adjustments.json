@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -273,6 +273,36 @@
 								"sink": {
 									"name": "Tanker",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_tanker",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tanker Lookup Text",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_totalsulphurresult",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Total sulphur result",
+									"type": "Int32"
 								}
 							}
 						]
