@@ -27,8 +27,8 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ww_prebottlinganalysisid",
-									"type": "Guid"
+									"name": "ww_prebottlinganalysissummaryname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Pre-Bottling Analysis Summary Name",
@@ -407,8 +407,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_sealid",
-									"type": "Int32"
+									"name": "ww_sealnumber",
+									"type": "String"
 								},
 								"sink": {
 									"name": "seal ID #",
