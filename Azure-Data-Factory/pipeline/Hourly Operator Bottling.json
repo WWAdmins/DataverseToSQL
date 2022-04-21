@@ -67,8 +67,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_billofmaterials",
-									"type": "Guid"
+									"name": "ww_billofmaterialsname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Bill of Materials ID",
