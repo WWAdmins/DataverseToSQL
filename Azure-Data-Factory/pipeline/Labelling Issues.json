@@ -87,8 +87,8 @@
 							},
 							{
 								"source": {
-									"name": "createdonbehalfbyyominame",
-									"type": "String"
+									"name": "ww_damagedscrewcaps",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Damaged screwcaps",
