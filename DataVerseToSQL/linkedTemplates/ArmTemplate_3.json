@@ -10554,8 +10554,8 @@
 									},
 									{
 										"source": {
-											"name": "ww_alcbydistil",
-											"type": "Boolean"
+											"name": "ww_alcoholbydistillation",
+											"type": "String"
 										},
 										"sink": {
 											"name": "Alcohol By Distil",
@@ -10564,7 +10564,7 @@
 									},
 									{
 										"source": {
-											"name": "ww_alcoholbydistillation",
+											"name": "createdonbehalfbyyominame",
 											"type": "String"
 										},
 										"sink": {
@@ -10794,12 +10794,12 @@
 									},
 									{
 										"source": {
-											"name": "ww_deleteline",
-											"type": "Boolean"
+											"name": "overriddencreatedon",
+											"type": "DateTime"
 										},
 										"sink": {
-											"name": "DeletedLine",
-											"type": "Boolean"
+											"name": "Record Created On",
+											"type": "DateTime"
 										}
 									},
 									{
@@ -10830,6 +10830,66 @@
 										"sink": {
 											"name": "Tanker",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "DeletedLine",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_greentag",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Green Tag",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_location",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Location",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lockcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Lock code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_sealnumber",
+											"type": "String"
+										},
+										"sink": {
+											"name": "seal ID #",
+											"type": "String"
 										}
 									}
 								]
