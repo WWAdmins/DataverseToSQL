@@ -8689,7 +8689,7 @@
 									},
 									{
 										"source": {
-											"name": "statecode",
+											"name": "statuscode",
 											"type": "Int32"
 										},
 										"sink": {
@@ -8935,6 +8935,26 @@
 										"sink": {
 											"name": "Breakage Location",
 											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_typeofglassbreak",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Type of glass break",
+											"type": "String"
 										}
 									}
 								]
