@@ -57,16 +57,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_bardifferential",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "1.5 bar differential",
-									"type": "Boolean"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_billofmaterialsname",
 									"type": "String"
 								},
@@ -1107,16 +1097,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_rinserwatersupply",
-									"type": "Decimal"
-								},
-								"sink": {
-									"name": "Rinser  Water Supply",
-									"type": "Decimal"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_rinsewater045mprefilter",
 									"type": "Decimal"
 								},
@@ -1213,16 +1193,6 @@
 								"sink": {
 									"name": "Velcorn Time",
 									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_winetemperatureinternalprobe40c",
-									"type": "Boolean"
-								},
-								"sink": {
-									"name": "Wine Temperature (Internal Probe) <4.0°C",
-									"type": "String"
 								}
 							},
 							{
