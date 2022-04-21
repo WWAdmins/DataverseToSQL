@@ -334,16 +334,6 @@
 									"name": "Tanker Lookup Text",
 									"type": "String"
 								}
-							},
-							{
-								"source": {
-									"name": "ww_pbatankerlookupname",
-									"type": "String"
-								},
-								"sink": {
-									"name": "PBA Tanker Lookup",
-									"type": "String"
-								}
 							}
 						]
 					}
