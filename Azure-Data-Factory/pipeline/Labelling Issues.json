@@ -37,7 +37,7 @@
 							},
 							{
 								"source": {
-									"name": "statecode",
+									"name": "statuscode",
 									"type": "Int32"
 								},
 								"sink": {
@@ -87,8 +87,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_damagedscrewcaps",
-									"type": "Int32"
+									"name": "createdonbehalfbyyominame",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Damaged screwcaps",
@@ -233,6 +233,16 @@
 								"sink": {
 									"name": "Bill of Materials",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_productionline",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "ProductionLineId",
+									"type": "Int32"
 								}
 							}
 						]
