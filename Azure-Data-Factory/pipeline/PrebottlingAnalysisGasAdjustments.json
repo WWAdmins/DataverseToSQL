@@ -297,26 +297,6 @@
 							},
 							{
 								"source": {
-									"name": "ww_off",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CO2 Adjustment Off",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
-									"name": "ww_on",
-									"type": "String"
-								},
-								"sink": {
-									"name": "CO2 Adjustment On",
-									"type": "DateTime"
-								}
-							},
-							{
-								"source": {
 									"name": "ww_co2gasused",
 									"type": "Int32"
 								},
