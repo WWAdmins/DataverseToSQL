@@ -27,11 +27,11 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "createdby",
-									"type": "Guid"
+									"name": "ww_prebottlinganalysissignoffname",
+									"type": "String"
 								},
 								"sink": {
-									"name": "Created By",
+									"name": "Pre-bottling Analysis Sign Off Name",
 									"type": "String"
 								}
 							},
@@ -117,7 +117,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "createdby",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Created By",
@@ -126,7 +127,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_eststarttime",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Est. start time",
@@ -135,7 +137,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_etxt",
+									"type": "String"
 								},
 								"sink": {
 									"name": "etxt",
@@ -144,7 +147,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_filterabilitycasechargezpfsc",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Filterability case charge ZPFSC",
@@ -153,7 +157,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_filterabilityretestzlafi",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Filterability retest ZLAFI",
@@ -162,7 +167,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_goodtogo",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Good to go",
@@ -171,7 +177,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_instructionfromwinemaker",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Instruction from Winemaker",
@@ -180,7 +187,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_signoff",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Sign off",
@@ -189,7 +197,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_so2recheckfreeftzlaso2",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "SO2 recheck (free F+T) ZLASO2",
@@ -198,7 +207,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_soetxt",
+									"type": "Boolean"
 								},
 								"sink": {
 									"name": "SOetxt",
@@ -207,7 +217,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_sogoodtogo",
+									"type": "Boolean"
 								},
 								"sink": {
 									"name": "SO Good to go",
@@ -216,7 +227,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_sowinemakertobepresentfortaste",
+									"type": "Boolean"
 								},
 								"sink": {
 									"name": "SO Winemaker To Be Present For Taste",
@@ -225,7 +237,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_spargeinlinezpssp",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Sparge/inline ZPSSP",
@@ -234,7 +247,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_startupalcoholpass",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Start-up alcohol pass",
@@ -243,7 +257,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_startupalcoholreading",
+									"type": "Decimal"
 								},
 								"sink": {
 									"name": "Start-up alcohol reading",
@@ -252,7 +267,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_tanktransferzlatran",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Tank transfer ZLATRAN",
@@ -261,7 +277,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_tempadjustmentzpcwt",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Temp adjustment ZPCWT",
@@ -270,7 +287,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_winemakerinstructions",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Winemaker",
@@ -279,7 +297,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "versionnumber",
+									"type": "Int64"
 								},
 								"sink": {
 									"name": "Winemaker Instructions",
@@ -288,7 +307,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_sowinemakertobepresentfortaste",
+									"type": "Boolean"
 								},
 								"sink": {
 									"name": "Winemaker To Be Present For Taste",
@@ -297,7 +317,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_wwsupplieddryicezpsdi",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Winemaker To Be Present For Taste Off",
@@ -306,7 +327,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_authorisation",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "WW supplied dry ice ZPSDI",
@@ -315,7 +337,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_operator",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Operator",
@@ -324,7 +347,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_operatorcode",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Operator Code",
@@ -333,7 +357,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_runname",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Run Name",
@@ -342,7 +367,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "createdon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Created On",
@@ -351,7 +377,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "importsequencenumber",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Import Sequence Number",
@@ -360,7 +387,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "modifiedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Modified On",
@@ -369,7 +397,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "overriddencreatedon",
+									"type": "DateTime"
 								},
 								"sink": {
 									"name": "Record Created On",
@@ -378,7 +407,8 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_prebottlinganalysissignoffid",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Pre-bottling Analysis Sign Off",
@@ -387,20 +417,12 @@
 							},
 							{
 								"source": {
-									"name": ""
+									"name": "ww_run",
+									"type": "Guid"
 								},
 								"sink": {
 									"name": "Run",
 									"type": "Guid"
-								}
-							},
-							{
-								"source": {
-									"name": ""
-								},
-								"sink": {
-									"name": "ProductionLineId",
-									"type": "Int32"
 								}
 							}
 						]
