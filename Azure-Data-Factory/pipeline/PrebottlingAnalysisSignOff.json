@@ -307,8 +307,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_sowinemakertobepresentfortaste",
-									"type": "Boolean"
+									"name": "ww_winemakertobepresentfortaste",
+									"type": "Int32"
 								},
 								"sink": {
 									"name": "Winemaker To Be Present For Taste",
