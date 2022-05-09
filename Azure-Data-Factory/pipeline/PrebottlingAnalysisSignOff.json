@@ -317,8 +317,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_wwsupplieddryicezpsdi",
-									"type": "Int32"
+									"name": "ww_winemakertobepresentfortasteoff",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Winemaker To Be Present For Taste Off",
@@ -327,7 +327,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_authorisation",
+									"name": "ww_wwsupplieddryicezpsdi",
 									"type": "Int32"
 								},
 								"sink": {
