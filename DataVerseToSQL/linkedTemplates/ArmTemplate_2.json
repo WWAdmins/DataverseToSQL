@@ -2224,6 +2224,25 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisSignOff')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Pre-bottling Signoff"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisSulphurAdjustments')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2703,60 +2722,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Site"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_Tanker')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "TankerId",
-						"type": "uniqueidentifier"
-					},
-					{
-						"name": "Volume",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "CreatedOn",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "ModifiedOn",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Site",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Tanker"
 				}
 			},
 			"dependsOn": []
