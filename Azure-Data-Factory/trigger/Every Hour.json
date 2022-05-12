@@ -135,6 +135,12 @@
 					"referenceName": "PrebottlingAnalysisSignOff",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Carton Usage",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
