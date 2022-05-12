@@ -2,7 +2,7 @@
 	"name": "Every Hour",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
@@ -127,6 +127,12 @@
 			{
 				"pipelineReference": {
 					"referenceName": "Filler Operation",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PrebottlingAnalysisSignOff",
 					"type": "PipelineReference"
 				}
 			}
