@@ -19096,6 +19096,41 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PrebottlingAnalysisSignOff",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Carton Usage",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Carton Usage Detail",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "ProductionLine",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Tanker",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -19129,7 +19164,12 @@
 				"[concat(variables('factoryId'), '/pipelines/Run')]",
 				"[concat(variables('factoryId'), '/pipelines/Run Report - BottleLabelPack')]",
 				"[concat(variables('factoryId'), '/pipelines/Hourly Torque and Volume')]",
-				"[concat(variables('factoryId'), '/pipelines/Filler Operation')]"
+				"[concat(variables('factoryId'), '/pipelines/Filler Operation')]",
+				"[concat(variables('factoryId'), '/pipelines/PrebottlingAnalysisSignOff')]",
+				"[concat(variables('factoryId'), '/pipelines/Carton Usage')]",
+				"[concat(variables('factoryId'), '/pipelines/Carton Usage Detail')]",
+				"[concat(variables('factoryId'), '/pipelines/ProductionLine')]",
+				"[concat(variables('factoryId'), '/pipelines/Tanker')]"
 			]
 		},
 		{

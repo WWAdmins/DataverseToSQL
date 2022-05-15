@@ -3448,6 +3448,41 @@
 							"type": "PipelineReference"
 						},
 						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "PrebottlingAnalysisSignOff",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Carton Usage",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Carton Usage Detail",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "ProductionLine",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					},
+					{
+						"pipelineReference": {
+							"referenceName": "Tanker",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
 					}
 				],
 				"type": "ScheduleTrigger",
@@ -3465,7 +3500,10 @@
 				"[concat(variables('factoryId'), '/pipelines/Pre-Bottling Analysis')]",
 				"[concat(variables('factoryId'), '/pipelines/PrebottlingAnalysisGasAdjustments')]",
 				"[concat(variables('factoryId'), '/pipelines/Run')]",
-				"[concat(variables('factoryId'), '/pipelines/Run Report - BottleLabelPack')]"
+				"[concat(variables('factoryId'), '/pipelines/Run Report - BottleLabelPack')]",
+				"[concat(variables('factoryId'), '/pipelines/PrebottlingAnalysisSignOff')]",
+				"[concat(variables('factoryId'), '/pipelines/ProductionLine')]",
+				"[concat(variables('factoryId'), '/pipelines/Tanker')]"
 			]
 		}
 	]
