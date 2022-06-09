@@ -507,8 +507,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_barcodecheckdigit",
-									"type": "Int32"
+									"name": "ww_labelbarcodecheckdigit",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Label Barcode check digit",
