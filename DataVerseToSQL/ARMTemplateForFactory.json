@@ -13329,6 +13329,36 @@
 											"name": "Run",
 											"type": "Guid"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_chargingcomplete",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Charging complete",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "crc5d_additionalchargesinformation",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Additional charges information",
+											"type": "String"
+										}
 									}
 								]
 							}
