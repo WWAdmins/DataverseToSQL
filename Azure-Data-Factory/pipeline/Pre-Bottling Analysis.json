@@ -77,8 +77,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_alcoholbydistillation",
-									"type": "String"
+									"name": "ww_alcbydistil",
+									"type": "Boolean"
 								},
 								"sink": {
 									"name": "Alcohol By Distil",
@@ -87,7 +87,7 @@
 							},
 							{
 								"source": {
-									"name": "createdonbehalfbyyominame",
+									"name": "ww_alcoholbydistillation",
 									"type": "String"
 								},
 								"sink": {
@@ -187,8 +187,8 @@
 							},
 							{
 								"source": {
-									"name": "ww_operatorcode",
-									"type": "Int32"
+									"name": "ww_operator",
+									"type": "String"
 								},
 								"sink": {
 									"name": "Operator",
@@ -412,6 +412,26 @@
 								},
 								"sink": {
 									"name": "seal ID #",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_etxt",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "etxt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ww_refract",
+									"type": "Boolean"
+								},
+								"sink": {
+									"name": "Refract",
 									"type": "String"
 								}
 							}
