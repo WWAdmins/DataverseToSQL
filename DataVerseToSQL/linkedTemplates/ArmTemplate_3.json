@@ -11196,6 +11196,56 @@
 											"name": "Tanker Lookup Text",
 											"type": "String"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_alcoholbydistil",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Alcohol By Distil",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_density",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "Density",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fi",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "FI",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_ph",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "PH",
+											"type": "Decimal"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tso2num",
+											"type": "Decimal"
+										},
+										"sink": {
+											"name": "TS02 Num",
+											"type": "Decimal"
+										}
 									}
 								]
 							}
