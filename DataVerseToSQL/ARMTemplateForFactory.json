@@ -4632,6 +4632,146 @@
 											"name": "Wine signed off Sig",
 											"type": "String"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh6",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H6",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh7",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H7",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh8",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H8",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh9",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H9",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh10",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H10",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh11",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H11",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_threadrollersh12",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Thread Rollers H12",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh6",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H6",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh7",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H7",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh8",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H8",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh9",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H9",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh10",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H10",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh11",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H11",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tuckrollersh12",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Tuck Rollers H12",
+											"type": "String"
+										}
 									}
 								]
 							}
