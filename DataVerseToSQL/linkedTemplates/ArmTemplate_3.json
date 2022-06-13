@@ -6336,6 +6336,26 @@
 									},
 									{
 										"source": {
+											"name": "ww_visualfloatiescheckedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visual floaties checked Sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_visualleakssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visual leaks sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
 											"name": "ww_winetemperatureinternalprobe40c",
 											"type": "Boolean"
 										},
