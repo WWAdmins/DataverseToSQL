@@ -1004,6 +1004,16 @@
 											"name": "Record Created On",
 											"type": "DateTime"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "ProductionLineId",
+											"type": "Int32"
+										}
 									}
 								]
 							}
