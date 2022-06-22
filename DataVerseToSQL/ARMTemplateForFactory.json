@@ -506,6 +506,16 @@
 									},
 									{
 										"source": {
+											"name": "ww_lastcopied",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "LastCopied",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
 											"name": "modifiedon",
 											"type": "DateTime"
 										},
