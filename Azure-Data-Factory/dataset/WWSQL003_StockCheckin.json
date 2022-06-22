@@ -1,0 +1,93 @@
+{
+	"name": "WWSQL003_StockCheckin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bottles broken",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Comments",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Damaged Caps",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Damages Labels",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Delete Line",
+				"type": "bit"
+			},
+			{
+				"name": "LPN for returns",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Modified on",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Production Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Returned to stock",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Washer Dryer Used",
+				"type": "bit"
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Stock checkin",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Stock checkin"
+		}
+	}
+}
