@@ -1,0 +1,248 @@
+{
+	"name": "WWSQL003_SupervisorSignoff",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "All DG removed sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Any cap bottle changes sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper compression correct sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper correct change parts sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper correct dispenser clearance sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper cut caps sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper gas flow in bottle mouth sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper gas flow meter sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper missing cap detector sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper tank gas sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper top plate neck guide sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper tuck challenge test sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Capper tuck thread redraw sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cork correct change parts sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cork correct corking bells sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cork correct height sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cork headspace pressure sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Cork timing sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Depal bottle board filled out sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Depal summary sheet correct sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Filler correct change parts sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Filler correct height sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Filler low fill detector sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Filtration correct to spec sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Filtration correct valves open closed sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux all caps torqued down",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct change parts sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct compression",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct dispenser plate clearance",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct height sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct screwcapper compression",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux correct springs in capper heads",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Lux torque settings",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Missing label sensors on sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Notes",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PET correct springs in capper sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "PET laser power turned down sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Pre-flight checksheet completed sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Production Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Pump flow",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rinser Correct change parts sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rinser correct height sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rinser full coverage sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rinser low pressure cutout sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Visible glass on the line sig",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Volume difference",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Supervisor Signoff",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Run",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Supervisor Signoff"
+		}
+	}
+}
