@@ -14820,7 +14820,7 @@
 										},
 										"sink": {
 											"name": "Item Code",
-											"type": "Int32"
+											"type": "String"
 										}
 									},
 									{
@@ -14921,6 +14921,16 @@
 										"sink": {
 											"name": "Record Created On",
 											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
 										}
 									},
 									{
@@ -15052,6 +15062,329 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Stockcheckinentry')]",
 				"[concat(variables('factoryId'), '/datasets/WWSQL003_Stockcheckinentry')]",
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Stock checkin')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Stock checkin",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_bottlesbroken",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Bottles broken",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_comments",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Comments",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_damagedcaps",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Damaged Caps",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_damageslabels",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Damages Labels",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_deleteline",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Delete Line",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_lpn",
+											"type": "String"
+										},
+										"sink": {
+											"name": "LPN for returns",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified on",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Production Line",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_returnedtostock",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Returned to stock",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_washerdryerused",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Washer Dryer Used",
+											"type": "Boolean"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill Of Materials",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_stockcheckinid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Stock checkin",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Stockcheckinentry",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_StockCheckin",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Stock checkin",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[sp_Stock checkin]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP Fail Email",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Merge Statement",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					},
+					{
+						"name": "Email on Failure",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Stock checkin",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Stockcheckinentry')]",
+				"[concat(variables('factoryId'), '/datasets/WWSQL003_StockCheckin')]",
 				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
 			]
 		},
@@ -16352,6 +16685,26 @@
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Stockcheckinentry')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "DataVerse",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "CommonDataServiceForAppsEntity",
+				"schema": [],
+				"typeProperties": {
+					"entityName": "ww_stockcheckinentry"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/DataVerse')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Stockcheckinentry1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -19650,6 +20003,108 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_Stockcheckinentry1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "Name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Status",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Time Loaded",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Delete Line",
+						"type": "bit"
+					},
+					{
+						"name": "Item Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "LPN",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Modified on",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Operator Code",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Production Line",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Quantity",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Quantity decimal",
+						"type": "decimal",
+						"precision": 10,
+						"scale": 5
+					},
+					{
+						"name": "Run",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Import Sequence Number",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Record Created On",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "Stock checkin entry",
+						"type": "uniqueidentifier"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Stock checkin entry"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_Tanker')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -20012,329 +20467,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Stock checkin')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Stock checkin",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "CommonDataServiceForAppsSource"
-							},
-							"sink": {
-								"type": "SqlServerSink",
-								"writeBehavior": "insert",
-								"sqlWriterUseTableLock": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"mappings": [
-									{
-										"source": {
-											"name": "ww_name",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Name",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "statecode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Status",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_bottlesbroken",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Bottles broken",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_comments",
-											"type": "String"
-										},
-										"sink": {
-											"name": "Comments",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_damagedcaps",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Damaged Caps",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_damageslabels",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Damages Labels",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_deleteline",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Delete Line",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_lpn",
-											"type": "String"
-										},
-										"sink": {
-											"name": "LPN for returns",
-											"type": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "modifiedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Modified on",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_operatorcode",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Operator Code",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_productionline",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Production Line",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_returnedtostock",
-											"type": "Int32"
-										},
-										"sink": {
-											"name": "Returned to stock",
-											"type": "Int32"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_washerdryerused",
-											"type": "Boolean"
-										},
-										"sink": {
-											"name": "Washer Dryer Used",
-											"type": "Boolean"
-										}
-									},
-									{
-										"source": {
-											"name": "createdon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "overriddencreatedon",
-											"type": "DateTime"
-										},
-										"sink": {
-											"name": "Record Created On",
-											"type": "DateTime"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_billofmaterials",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Bill Of Materials",
-											"type": "Guid"
-										}
-									},
-									{
-										"source": {
-											"name": "ww_stockcheckinid",
-											"type": "Guid"
-										},
-										"sink": {
-											"name": "Stock checkin",
-											"type": "Guid"
-										}
-									}
-								]
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "Stockcheckinentry",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "WWSQL003_StockCheckin",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "Merge Statement",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "Stock checkin",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[sp_Stock checkin]"
-						},
-						"linkedServiceName": {
-							"referenceName": "WWSQL003",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
-						"name": "SP Fail Email",
-						"type": "WebActivity",
-						"dependsOn": [
-							{
-								"activity": "Merge Statement",
-								"dependencyConditions": [
-									"Failed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
-							"method": "POST",
-							"headers": {},
-							"body": {
-								"DataFactoryName": "@{pipeline().DataFactory}",
-								"PipelineName": "@{pipeline().Pipeline}",
-								"Subject": "An error has occurred!",
-								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
-								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
-							}
-						}
-					},
-					{
-						"name": "Email on Failure",
-						"type": "WebActivity",
-						"dependsOn": [
-							{
-								"activity": "Stock checkin",
-								"dependencyConditions": [
-									"Failed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "7.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
-							"method": "POST",
-							"headers": {},
-							"body": {
-								"DataFactoryName": "@{pipeline().DataFactory}",
-								"PipelineName": "@{pipeline().Pipeline}",
-								"Subject": "An error has occurred!",
-								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
-								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Stockcheckinentry')]",
-				"[concat(variables('factoryId'), '/datasets/WWSQL003_StockCheckin')]",
-				"[concat(variables('factoryId'), '/linkedServices/WWSQL003')]"
-			]
 		}
 	]
 }

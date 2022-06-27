@@ -13,6 +13,51 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_BreakageLocation')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [
+					{
+						"name": "StateCode",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Location",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BreakageLocation",
+						"type": "uniqueidentifier"
+					},
+					{
+						"name": "CreatedOn",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					},
+					{
+						"name": "ModifiedOn",
+						"type": "datetime",
+						"precision": 23,
+						"scale": 3
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "BreakageLocation"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_CartonUsage')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2580,57 +2625,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "ProductionLine"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_Run')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "RunNumber",
-						"type": "nvarchar"
-					},
-					{
-						"name": "RunDate",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "WorkOrderID",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "WorkOrderType",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Vintage",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Variety",
-						"type": "nvarchar"
-					},
-					{
-						"name": "ProductionLine",
-						"type": "nvarchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Run"
 				}
 			},
 			"dependsOn": []
