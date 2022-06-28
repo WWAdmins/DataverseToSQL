@@ -1,0 +1,101 @@
+{
+	"name": "WWSQL003_QCEndofRun",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "QC End of Run Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bottle Counter",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "End of Samples",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Flow Meter",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Laser Counter",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Magnum White Tape",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Production Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Reject Counter",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Run end time",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "QC End of Run",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Run",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "QC End of Run"
+		}
+	}
+}
