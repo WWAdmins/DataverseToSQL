@@ -13,6 +13,1641 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Supervisor Signoff BOM')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Supervisor Signoff BOM",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alldgremoved",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "All DG removed",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alldgremovedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "All DG removed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_anycapbottlechanges",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Any cap bottle changes",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_anycapbottlechangessig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Any cap bottle changes sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercompressioncorrectsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper compression correct sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercorrectdispenserclearancesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper correct dispenser clearance sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercutcapssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper cut caps sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappergasflowinbottlemouthsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper gas flow in bottle mouth sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappergasflowmetersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper gas flow meter sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappermissingcapdetectorsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper missing cap detector sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertankgassig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tank gas sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertopplateneckguidesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper top plate neck guide sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertuckchallengetestsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tuck challenge test sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertuckthreadredrawsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tuck thread redraw sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectcorkingbellssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct corking bells sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkheadspacepressuresig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork headspace pressure sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corktimingsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork timing sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_depalbottleboardfilledoutsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Depal bottle board filled out sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_depalsummarysheetcorrectsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Depal summary sheet correct sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillercorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerlowfilldetectorsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler low fill detector sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filtrationcorrecttospecsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filtration correct to spec sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filtrationcorrectvalvesopenclosedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filtration correct valves open closed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxallcapstorqueddown",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux all caps torqued down",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectcompression",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct compression",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectdispenserplateclearance",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct dispenser plate clearance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectscrewcappercompression",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct screwcapper compression",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectspringsincapperheads",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct springs in capper heads",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxtorquesettings",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux torque settings",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_missinglabelsensorsonsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Missing label sensors on sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_notes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Notes",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operatorcode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_petcorrectspringsincappersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "PET correct springs in capper sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_petlaserpowerturneddownsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "PET laser power turned down sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_preflightchecksheetcompletedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pre-flight checksheet completed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Production Line",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pumpflow",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pump flow",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser Correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsercorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserfullcoveragesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser full coverage sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserlowpressurecutoutsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser low pressure cutout sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_visibleglassonthelinesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visible glass on the line sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_volumedifference",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Volume difference",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_supervisorsignoffbomid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supervisor Signoff BOM",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_billofmaterials",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Bill of Materials",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SupervisorSignoffBOM",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_SupervisorSignoffBOM",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Supervisor Signoff BOM",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[sp_Stock checkin]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP Fail Email",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Merge Statement",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					},
+					{
+						"name": "Email on Failure",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Supervisor Signoff BOM",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Supervisor Signoff')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Supervisor Signoff",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink",
+								"writeBehavior": "insert",
+								"sqlWriterUseTableLock": false
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statuscode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_alldgremovedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "All DG removed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_anycapbottlechangessig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Any cap bottle changes sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercompressioncorrectsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper compression correct sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercorrectdispenserclearancesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper correct dispenser clearance sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappercutcapssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper cut caps sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappergasflowinbottlemouthsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper gas flow in bottle mouth sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappergasflowmetersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper gas flow meter sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappermissingcapdetectorsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper missing cap detector sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertankgassig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tank gas sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertopplateneckguidesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper top plate neck guide sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertuckchallengetestsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tuck challenge test sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_cappertuckthreadredrawsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Capper tuck thread redraw sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectcorkingbellssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct corking bells sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkcorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corkheadspacepressuresig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork headspace pressure sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_corktimingsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Cork timing sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_depalbottleboardfilledoutsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Depal bottle board filled out sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_depalsummarysheetcorrectsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Depal summary sheet correct sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillercorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_fillerlowfilldetectorsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filler low fill detector sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filtrationcorrecttospecsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filtration correct to spec sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_filtrationcorrectvalvesopenclosedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Filtration correct valves open closed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxallcapstorqueddown",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux all caps torqued down",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectcompression",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct compression",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectdispenserplateclearance",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct dispenser plate clearance",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectscrewcappercompression",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct screwcapper compression",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxcorrectspringsincapperheads",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux correct springs in capper heads",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_luxtorquesettings",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Lux torque settings",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_missinglabelsensorsonsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Missing label sensors on sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_notes",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Notes",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_operator",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Operator Code",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_petcorrectspringsincappersig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "PET correct springs in capper sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_petlaserpowerturneddownsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "PET laser power turned down sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_preflightchecksheetcompletedsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pre-flight checksheet completed sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_productionline",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Production Line",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_pumpflow",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Pump flow",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsercorrectchangepartssig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser Correct change parts sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinsercorrectheightsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser correct height sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserfullcoveragesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser full coverage sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_rinserlowpressurecutoutsig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Rinser low pressure cutout sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_visibleglassonthelinesig",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Visible glass on the line sig",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_volumedifference",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Volume difference",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "importsequencenumber",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Import Sequence Number",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Modified On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "overriddencreatedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "Record Created On",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_supervisorsignoffid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Supervisor Signoff",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_run",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Run",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "SupervisorSignoff",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_SupervisorSignoff",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Supervisor Signoff",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[sp_Stock checkin]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP Fail Email",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Supervisor Signoff",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					},
+					{
+						"name": "Email on Failure",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Merge Statement",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "Tejaswi.Datla@wineworks.co.nz"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Tanker')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Tanker",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "CommonDataServiceForAppsSource"
+							},
+							"sink": {
+								"type": "SqlServerSink"
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "ww_name",
+											"type": "String"
+										},
+										"sink": {
+											"name": "Name",
+											"type": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "statecode",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Status",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_tankerid",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "TankerId",
+											"type": "Guid"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_volume",
+											"type": "Int32"
+										},
+										"sink": {
+											"name": "Volume",
+											"type": "Int32"
+										}
+									},
+									{
+										"source": {
+											"name": "createdon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "CreatedOn",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "modifiedon",
+											"type": "DateTime"
+										},
+										"sink": {
+											"name": "ModifiedOn",
+											"type": "DateTime"
+										}
+									},
+									{
+										"source": {
+											"name": "ww_site",
+											"type": "Guid"
+										},
+										"sink": {
+											"name": "Site",
+											"type": "Guid"
+										}
+									}
+								]
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "Tanker",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "WWSQL003_Tanker",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					},
+					{
+						"name": "Merge Statement",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "Tanker",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[sp_Tanker]"
+						},
+						"linkedServiceName": {
+							"referenceName": "WWSQL003",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "Data Copy fail email",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Tanker",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "itteam@wineworks.co.nz"
+							}
+						}
+					},
+					{
+						"name": "SP Fail Email",
+						"type": "WebActivity",
+						"dependsOn": [
+							{
+								"activity": "Merge Statement",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "https://prod-24.australiasoutheast.logic.azure.com:443/workflows/d77213c4f1ec4ab89956fb3256ee6f0b/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=JdvR2R2i-AADVzAwGjO9cFUL5shYwrH-ITahY10Tw-0",
+							"method": "POST",
+							"headers": {},
+							"body": {
+								"DataFactoryName": "@{pipeline().DataFactory}",
+								"PipelineName": "@{pipeline().Pipeline}",
+								"Subject": "An error has occurred!",
+								"ErrorMessage": "The ADF pipeline has crashed! Please check the logs.",
+								"EmailTo": "itteam@wineworks.co.nz"
+							}
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Every Hour')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -213,7 +1848,9 @@
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Tanker')]"
+			]
 		}
 	]
 }

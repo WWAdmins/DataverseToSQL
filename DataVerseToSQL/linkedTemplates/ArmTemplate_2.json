@@ -13,6 +13,25 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchRejects')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "WWSQL003",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "SqlServerTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "Bottle Batch Rejects"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/WWSQL003_BottleBatchSummary')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2458,141 +2477,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "Pre-bottling Signoff"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/WWSQL003_PrebottlingAnalysisSulphurAdjustments')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "WWSQL003",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "SqlServerTable",
-				"schema": [
-					{
-						"name": "PBA  Sulphur Adjustments Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Status",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Customer Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Date",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "etxt",
-						"type": "bit"
-					},
-					{
-						"name": "Initial 1",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Initial 2",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Operator",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "PMS (g)",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "PMS Batch",
-						"type": "nvarchar"
-					},
-					{
-						"name": "PMS Batch expiry date",
-						"type": "date"
-					},
-					{
-						"name": "Required SO2 Result",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Retest Result",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Run Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Tank Name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "SO2 Increases PPM",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Sparge Time",
-						"type": "nvarchar"
-					},
-					{
-						"name": "Wine Volume",
-						"type": "decimal",
-						"precision": 9,
-						"scale": 5
-					},
-					{
-						"name": "Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Import Sequence Number",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "Modified On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Record Created On",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "Pre-bottling Analysis Sulphur Adjustments",
-						"type": "uniqueidentifier"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "Pre-bottling Analysis Sulphur Adjustments"
 				}
 			},
 			"dependsOn": []
