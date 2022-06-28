@@ -1,0 +1,129 @@
+{
+	"name": "WWSQL003_QCHourlyCheck",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "QC Hourly Check Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CO2",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 5
+			},
+			{
+				"name": "Collect export samples",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Comments",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Delete Line",
+				"type": "bit"
+			},
+			{
+				"name": "DO",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 5
+			},
+			{
+				"name": "Flow meter reading",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Foreign Matter",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 5
+			},
+			{
+				"name": "Micro",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Production Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "QC Bottle Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "QC Screwcaps Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tank in use",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tank joints checked for leaks",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Time of check",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "QC Hourly Check",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Run",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "QC Hourly Check"
+		}
+	}
+}
