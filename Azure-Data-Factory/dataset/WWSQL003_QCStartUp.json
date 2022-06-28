@@ -1,0 +1,89 @@
+{
+	"name": "WWSQL003_QCStartUp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "WWSQL003",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "QC Start Up Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Status",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Bottle alcohol 1st Tank",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Cunos",
+				"type": "bit"
+			},
+			{
+				"name": "Micros needed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Operator Code",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Production Line",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Rockstopper",
+				"type": "bit"
+			},
+			{
+				"name": "WECS",
+				"type": "bit"
+			},
+			{
+				"name": "Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Import Sequence Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Modified On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Record Created On",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "QC Start Up",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Run",
+				"type": "uniqueidentifier"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "QC Start Up"
+		}
+	}
+}
