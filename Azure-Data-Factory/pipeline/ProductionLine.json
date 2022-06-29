@@ -47,7 +47,7 @@
 							},
 							{
 								"source": {
-									"name": "ww_productionlineshortname",
+									"name": "ww_productionlinename",
 									"type": "String"
 								},
 								"sink": {
@@ -63,6 +63,26 @@
 								"sink": {
 									"name": "Site",
 									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "ModifiedOn",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "createdon",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "CreatedOn",
+									"type": "DateTime"
 								}
 							}
 						]
