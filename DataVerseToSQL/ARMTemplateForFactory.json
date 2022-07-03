@@ -14112,7 +14112,7 @@
 						},
 						"userProperties": [],
 						"typeProperties": {
-							"storedProcedureName": "[[sp_Stock checkin]"
+							"storedProcedureName": "[[sp_QC End of Run]"
 						},
 						"linkedServiceName": {
 							"referenceName": "WWSQL003",
