@@ -293,7 +293,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[sp_Stock checkin]"
+					"storedProcedureName": "[sp_QC Hourly Check]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
