@@ -633,7 +633,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[sp_Stock checkin]"
+					"storedProcedureName": "[sp_Supervisor Signoff BOM]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
