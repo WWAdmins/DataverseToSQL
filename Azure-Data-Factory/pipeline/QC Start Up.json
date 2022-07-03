@@ -213,7 +213,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[sp_Stock checkin]"
+					"storedProcedureName": "[sp_QC Start Up]"
 				},
 				"linkedServiceName": {
 					"referenceName": "WWSQL003",
