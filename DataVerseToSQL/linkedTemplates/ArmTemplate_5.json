@@ -1861,6 +1861,16 @@
 											"name": "ModifiedOn",
 											"type": "DateTime"
 										}
+									},
+									{
+										"source": {
+											"name": "ww_completed",
+											"type": "Boolean"
+										},
+										"sink": {
+											"name": "Completed",
+											"type": "Boolean"
+										}
 									}
 								]
 							}
