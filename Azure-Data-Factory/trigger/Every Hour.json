@@ -189,6 +189,12 @@
 					"referenceName": "Stock checkin entry",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Supervisor Signoff",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
