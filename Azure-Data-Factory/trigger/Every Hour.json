@@ -153,6 +153,12 @@
 					"referenceName": "Tanker",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "PrebottlingAnalysisSignOff",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
