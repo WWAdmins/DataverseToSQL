@@ -195,6 +195,12 @@
 					"referenceName": "Supervisor Signoff",
 					"type": "PipelineReference"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "Supervisor Signoff BOM",
+					"type": "PipelineReference"
+				}
 			}
 		],
 		"type": "ScheduleTrigger",
